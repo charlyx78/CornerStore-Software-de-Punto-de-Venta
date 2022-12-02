@@ -214,15 +214,15 @@ namespace Proyecto_fina
                 SqlCommand cmd = new SqlCommand("SP_EXISTE_PRODUCTO", con.conectar());
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_producto", id_producto);
-                int cantidad = cmd.ExecuteNonQuery();
-                if (cantidad == 1)
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                if (dt.Rows.Count == 1)
                 {
-                    con.desconectar();
                     return true;
                 }
                 else
                 {
-                    con.desconectar();
                     return false;
                 }
             }
@@ -232,5 +232,5 @@ namespace Proyecto_fina
             }
         }
     }
-    }
+}
 

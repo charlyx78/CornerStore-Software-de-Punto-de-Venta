@@ -68,7 +68,7 @@ namespace Proyecto_fina
             this.txt_nombre_producto.Name = "txt_nombre_producto";
             this.txt_nombre_producto.Size = new System.Drawing.Size(186, 22);
             this.txt_nombre_producto.TabIndex = 112;
-            this.txt_nombre_producto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_producto_KeyPress);
+            this.txt_nombre_producto.TextChanged += new System.EventHandler(this.txt_nombre_producto_TextChanged);
             // 
             // lb_productos
             // 

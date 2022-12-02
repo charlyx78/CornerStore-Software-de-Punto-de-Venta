@@ -21,23 +21,29 @@ namespace Proyecto_fina
             InitializeComponent();
         }
 
-        private void txt_nombre_producto_KeyPress(object sender, KeyPressEventArgs e)
+        private void txt_nombre_producto_TextChanged(object sender, EventArgs e)
         {
-            lb_productos.Items.Clear();
-            Conexion con = new Conexion();
-            SqlCommand cmd = new SqlCommand("SP_BUSCAR_PRODUCTO", con.conectar());
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@busqueda", txt_nombre_producto.Text);
-            SqlDataReader dr = cmd.ExecuteReader();
-            if(dr.HasRows)
+            if(txt_nombre_producto.Text=="")
             {
-                while (dr.Read())
+                lb_productos.Items.Clear();
+            }
+            else
+            {
+                lb_productos.Items.Clear();
+                Conexion con = new Conexion();
+                SqlCommand cmd = new SqlCommand("SP_BUSCAR_PRODUCTO", con.conectar());
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@busqueda", txt_nombre_producto.Text);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.HasRows)
                 {
-                    lb_productos.Items.Add(dr.GetString(3));
+                    while (dr.Read())
+                    {
+                        lb_productos.Items.Add(dr.GetString(3));
+                    }
                 }
             }
         }
-
         private void lb_productos_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lb_productos.SelectedIndex >= 0)
@@ -54,7 +60,6 @@ namespace Proyecto_fina
                 }
             }
         }
-
         private void btn_agregar_producto_carrito_Click(object sender, EventArgs e)
         {
             int id_producto = id;
@@ -62,7 +67,7 @@ namespace Proyecto_fina
 
             if (txt_cantidad_nombre_producto.Value > 0)
             {
-                if (frm.getCantidadInventario(id_producto) > txt_cantidad_nombre_producto.Value)
+                if (frm.getCantidadInventario(id_producto) >= txt_cantidad_nombre_producto.Value)
                 {
                     try
                     {
@@ -150,6 +155,10 @@ namespace Proyecto_fina
                     MessageBox.Show("No hay suficientes productos en el inventario", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione la cantidad de productos a agregar", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

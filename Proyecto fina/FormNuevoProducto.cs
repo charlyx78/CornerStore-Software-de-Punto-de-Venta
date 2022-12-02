@@ -45,7 +45,7 @@ namespace Proyecto_fina
                 rd.Read();
                 txt_cantidad_descuento_producto.Value = rd.GetInt32(0);
             }
-        }  //hola
+        }  
         private void btn_nuevo_producto_Click(object sender, EventArgs e)
         {
             if (txt_nombre_producto.Text.Trim() == "" ||

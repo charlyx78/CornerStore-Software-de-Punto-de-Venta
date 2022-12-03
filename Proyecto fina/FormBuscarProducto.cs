@@ -64,7 +64,7 @@ namespace Proyecto_fina
         {
             int id_producto = id;
             FormVenta frm = Owner as FormVenta;
-
+            double stock_temp = (double)frm.getCantidadInventario(id_producto);
             if (txt_cantidad_nombre_producto.Value > 0)
             {
                 if (frm.getCantidadInventario(id_producto) >= txt_cantidad_nombre_producto.Value)
@@ -79,16 +79,24 @@ namespace Proyecto_fina
                                 {
                                     if (id_producto == Convert.ToInt32(frm.dg_carrito.Rows[i].Cells["id_producto"].Value))
                                     {
-                                        int cantidad = (int)frm.dg_carrito.Rows[i].Cells["cantidad"].Value + (int)txt_cantidad_nombre_producto.Value;
-                                        int descuento = (int)frm.dg_carrito.Rows[i].Cells["descuento_producto"].Value;
-                                        double precio = (double)frm.dg_carrito.Rows[i].Cells["precio_producto"].Value;
-                                        double subtotal = cantidad * precio;
-                                        double total_descuento = Math.Round(((double)subtotal * ((double)((int)descuento) / 100)), 2);
-                                        double total = (subtotal - (total_descuento)) * frm.iva;
-                                        frm.dg_carrito.Rows[i].Cells["cantidad"].Value = cantidad;
-                                        frm.dg_carrito.Rows[i].Cells["total_descuento_producto"].Value = total_descuento;
-                                        frm.dg_carrito.Rows[i].Cells["subtotal"].Value = Math.Round(subtotal, 2);
-                                        frm.dg_carrito.Rows[i].Cells["total"].Value = Math.Round(total, 2);
+                                        stock_temp -= (int)frm.dg_carrito.Rows[i].Cells["cantidad"].Value;
+                                        if ((double)txt_cantidad_nombre_producto.Value > stock_temp)
+                                        {
+                                            MessageBox.Show("No hay suficientes productos en el inventario", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        }
+                                        else
+                                        {
+                                            int cantidad = (int)frm.dg_carrito.Rows[i].Cells["cantidad"].Value + (int)txt_cantidad_nombre_producto.Value;
+                                            int descuento = (int)frm.dg_carrito.Rows[i].Cells["descuento_producto"].Value;
+                                            double precio = (double)frm.dg_carrito.Rows[i].Cells["precio_producto"].Value;
+                                            double subtotal = cantidad * precio;
+                                            double total_descuento = Math.Round(((double)subtotal * ((double)((int)descuento) / 100)), 2);
+                                            double total = (subtotal - (total_descuento)) * frm.iva;
+                                            frm.dg_carrito.Rows[i].Cells["cantidad"].Value = cantidad;
+                                            frm.dg_carrito.Rows[i].Cells["total_descuento_producto"].Value = total_descuento;
+                                            frm.dg_carrito.Rows[i].Cells["subtotal"].Value = Math.Round(subtotal, 2);
+                                            frm.dg_carrito.Rows[i].Cells["total"].Value = Math.Round(total, 2);
+                                        }
                                     }
                                 }
                             }

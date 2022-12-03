@@ -72,8 +72,8 @@ namespace Proyecto_fina
             if (dg_departamentos.SelectedRows.Count > 0)
             {
                 label1.Visible = true;
-                lbl_usuario_cambio.Visible = true;
-                lbl_fecha_cambio.Visible = true;
+                txt_usuario_cambio.Visible = true;
+                txt_fecha_cambio.Visible = true;
 
                 d.Id_departamento = (int)dg_departamentos.CurrentRow.Cells[0].Value;
 
@@ -84,8 +84,8 @@ namespace Proyecto_fina
                 {
                     rd.Read();
                     rd2.Read();
-                    lbl_usuario_cambio.Text = rd.GetString(0);
-                    lbl_fecha_cambio.Text = rd2.GetDateTime(0).ToString();
+                    txt_usuario_cambio.Text = rd.GetString(0);
+                    txt_fecha_cambio.Text = rd2.GetDateTime(0).ToString();
                 }
             }
         }
@@ -136,6 +136,11 @@ namespace Proyecto_fina
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void txt_usuario_cambio_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

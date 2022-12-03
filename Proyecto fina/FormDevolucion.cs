@@ -57,7 +57,7 @@ namespace Proyecto_fina
         }
         private void crearDevolucion()
         {
-            if((double)txt_cantidad_devolucion.Value > (int)dg_devolucion.Rows[dg_devolucion.CurrentRow.Index].Cells[3].Value)
+            if((double)txt_cantidad_devolucion.Value > (int)dg_devolucion.Rows[dg_devolucion.CurrentRow.Index].Cells[5].Value)
             {
                 MessageBox.Show("No se pueden devolver más productos de los que se compraron", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

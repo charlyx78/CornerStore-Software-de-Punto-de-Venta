@@ -40,12 +40,12 @@ namespace Proyecto_fina
             this.btn_cerrar = new System.Windows.Forms.PictureBox();
             this.panel_formularios = new System.Windows.Forms.Panel();
             this.panel_menu = new System.Windows.Forms.Panel();
+            this.btn_pagina_devolucion = new System.Windows.Forms.Button();
             this.btn_cerrar_sesion = new System.Windows.Forms.Button();
             this.btn_pagina_vender = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel_titulo = new System.Windows.Forms.Panel();
             this.btn_maximizar = new System.Windows.Forms.PictureBox();
-            this.btn_pagina_devolucion = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_restaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_minimizar)).BeginInit();
@@ -170,6 +170,24 @@ namespace Proyecto_fina
             this.panel_menu.Size = new System.Drawing.Size(200, 680);
             this.panel_menu.TabIndex = 4;
             // 
+            // btn_pagina_devolucion
+            // 
+            this.btn_pagina_devolucion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_pagina_devolucion.FlatAppearance.BorderSize = 0;
+            this.btn_pagina_devolucion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(208)))), ((int)(((byte)(217)))));
+            this.btn_pagina_devolucion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(157)))), ((int)(((byte)(166)))));
+            this.btn_pagina_devolucion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_pagina_devolucion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_pagina_devolucion.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btn_pagina_devolucion.Location = new System.Drawing.Point(12, 86);
+            this.btn_pagina_devolucion.Name = "btn_pagina_devolucion";
+            this.btn_pagina_devolucion.Size = new System.Drawing.Size(173, 30);
+            this.btn_pagina_devolucion.TabIndex = 2;
+            this.btn_pagina_devolucion.Text = "Devolución";
+            this.btn_pagina_devolucion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_pagina_devolucion.UseVisualStyleBackColor = true;
+            this.btn_pagina_devolucion.Click += new System.EventHandler(this.btn_pagina_devolucion_Click);
+            // 
             // btn_cerrar_sesion
             // 
             this.btn_cerrar_sesion.FlatAppearance.BorderSize = 0;
@@ -195,11 +213,12 @@ namespace Proyecto_fina
             this.btn_pagina_vender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_pagina_vender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_pagina_vender.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_pagina_vender.Location = new System.Drawing.Point(0, 30);
+            this.btn_pagina_vender.Location = new System.Drawing.Point(12, 30);
             this.btn_pagina_vender.Name = "btn_pagina_vender";
-            this.btn_pagina_vender.Size = new System.Drawing.Size(200, 30);
+            this.btn_pagina_vender.Size = new System.Drawing.Size(173, 30);
             this.btn_pagina_vender.TabIndex = 0;
             this.btn_pagina_vender.Text = "Vender";
+            this.btn_pagina_vender.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_pagina_vender.UseVisualStyleBackColor = true;
             this.btn_pagina_vender.Click += new System.EventHandler(this.btn_pagina_vender_Click);
             // 
@@ -242,23 +261,6 @@ namespace Proyecto_fina
             this.btn_maximizar.TabIndex = 2;
             this.btn_maximizar.TabStop = false;
             this.btn_maximizar.Click += new System.EventHandler(this.btn_maximizar_Click_1);
-            // 
-            // btn_pagina_devolucion
-            // 
-            this.btn_pagina_devolucion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_pagina_devolucion.FlatAppearance.BorderSize = 0;
-            this.btn_pagina_devolucion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(208)))), ((int)(((byte)(217)))));
-            this.btn_pagina_devolucion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(157)))), ((int)(((byte)(166)))));
-            this.btn_pagina_devolucion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_pagina_devolucion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_pagina_devolucion.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_pagina_devolucion.Location = new System.Drawing.Point(0, 86);
-            this.btn_pagina_devolucion.Name = "btn_pagina_devolucion";
-            this.btn_pagina_devolucion.Size = new System.Drawing.Size(200, 30);
-            this.btn_pagina_devolucion.TabIndex = 2;
-            this.btn_pagina_devolucion.Text = "Devolución";
-            this.btn_pagina_devolucion.UseVisualStyleBackColor = true;
-            this.btn_pagina_devolucion.Click += new System.EventHandler(this.btn_pagina_devolucion_Click);
             // 
             // Home
             // 

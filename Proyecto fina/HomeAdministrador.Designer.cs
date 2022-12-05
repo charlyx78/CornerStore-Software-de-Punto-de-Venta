@@ -133,7 +133,7 @@ namespace Proyecto_fina
             this.btn_pagina_reportes_ventas.Name = "btn_pagina_reportes_ventas";
             this.btn_pagina_reportes_ventas.Size = new System.Drawing.Size(175, 30);
             this.btn_pagina_reportes_ventas.TabIndex = 4;
-            this.btn_pagina_reportes_ventas.Text = "Reportes de ventas";
+            this.btn_pagina_reportes_ventas.Text = "Reportes de inventario";
             this.btn_pagina_reportes_ventas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_pagina_reportes_ventas.UseVisualStyleBackColor = true;
             this.btn_pagina_reportes_ventas.Click += new System.EventHandler(this.btn_pagina_reportes_ventas_Click);

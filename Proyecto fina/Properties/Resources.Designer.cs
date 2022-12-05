@@ -83,6 +83,16 @@ namespace Proyecto_fina.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_dinero_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-dinero-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_editar_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-editar-24", resourceCulture);
@@ -146,6 +156,16 @@ namespace Proyecto_fina.Properties {
         internal static System.Drawing.Bitmap minimizar {
             get {
                 object obj = ResourceManager.GetObject("minimizar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap nada_encontrado {
+            get {
+                object obj = ResourceManager.GetObject("nada_encontrado", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

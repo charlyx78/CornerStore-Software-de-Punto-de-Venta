@@ -52,7 +52,7 @@ namespace Proyecto_fina
                cb_departamento_producto.SelectedValue == null ||
                cb_descuento_producto.SelectedValue == null ||
                cb_unidad_medida_producto.SelectedItem == null ||
-               (int)txt_existencia_producto.Value == 0 ||
+               txt_existencia_producto.Value == 0 ||
                txt_costo_producto.Text == "" ||
                txt_precio_unitario_producto.Text == "" ||
                txt_descripcion_producto.Text == "" ||
@@ -65,8 +65,8 @@ namespace Proyecto_fina
                 try
                 {
                     p.Nombre_producto = txt_nombre_producto.Text.Trim().ToUpper();
-                    SqlDataReader rd = u.convertirID("id_departamento", "tb_departamentos", "nombre_departamento", cb_departamento_producto.Text);
-                    SqlDataReader rd2 = u.convertirID("id_descuento", "tb_descuentos", "nombre_descuento", cb_descuento_producto.Text);
+                    SqlDataReader rd = Utilidades.convertirID("id_departamento", "tb_departamentos", "nombre_departamento", cb_departamento_producto.Text);
+                    SqlDataReader rd2 = Utilidades.convertirID("id_descuento", "tb_descuentos", "nombre_descuento", cb_descuento_producto.Text);
                     if (rd.HasRows && rd2.HasRows)
                     {
                         rd.Read();
@@ -74,8 +74,8 @@ namespace Proyecto_fina
                         p.Id_departamento = rd.GetInt32(0);
                         p.Id_descuento = rd2.GetInt32(0);
                     }
-                    p.Cantidad_existencia = (int)txt_existencia_producto.Value;
-                    p.Punto_reorden = (int)txt_punto_reorden_producto.Value;
+                    p.Cantidad_existencia = (float)txt_existencia_producto.Value;
+                    p.Punto_reorden = (float)txt_punto_reorden_producto.Value;
                     p.Unidad_medida = cb_unidad_medida_producto.Text.Trim().ToUpper();
                     p.Costo = (float)txt_costo_producto.Value;
                     p.Precio_unitario = (float)txt_precio_unitario_producto.Value;
@@ -112,8 +112,8 @@ namespace Proyecto_fina
                     string text = lbl_codigo_producto.Text;
                     p.Codigo_producto = Int32.Parse(lbl_id_producto.Text);
                     p.Nuevo_nombre_producto = txt_nombre_producto.Text.Trim().ToUpper();
-                    SqlDataReader rd = u.convertirID("id_departamento", "tb_departamentos", "nombre_departamento", cb_departamento_producto.Text);
-                    SqlDataReader rd2 = u.convertirID("id_descuento", "tb_descuentos", "nombre_descuento", cb_descuento_producto.Text);
+                    SqlDataReader rd = Utilidades.convertirID("id_departamento", "tb_departamentos", "nombre_departamento", cb_departamento_producto.Text);
+                    SqlDataReader rd2 = Utilidades.convertirID("id_descuento", "tb_descuentos", "nombre_descuento", cb_descuento_producto.Text);
                     if (rd.HasRows && rd2.HasRows)
                     {
                         rd.Read();
@@ -121,8 +121,8 @@ namespace Proyecto_fina
                         p.Nuevo_id_departamento = rd.GetInt32(0);
                         p.Nuevo_id_descuento = rd2.GetInt32(0);
                     }
-                    p.Nuevo_cantidad_existencia = (int)txt_existencia_producto.Value;
-                    p.Nuevo_punto_reorden = (int)txt_punto_reorden_producto.Value;
+                    p.Nuevo_cantidad_existencia = (float)txt_existencia_producto.Value;
+                    p.Nuevo_punto_reorden = (float)txt_punto_reorden_producto.Value;
                     p.Nuevo_unidad_medida = cb_unidad_medida_producto.Text.Trim().ToUpper();
                     p.Nuevo_costo = (float)txt_costo_producto.Value;
                     p.Nuevo_precio_unitario = (float)txt_precio_unitario_producto.Value;

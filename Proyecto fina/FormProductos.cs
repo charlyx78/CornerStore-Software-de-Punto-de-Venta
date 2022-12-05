@@ -28,12 +28,27 @@ namespace Proyecto_fina
         public void mostrarProductos()
         {
             DataTable datos = productos.cargarProductos();
-            if (datos == null)
+            if (datos.Rows.Count == 0)
             {
-                MessageBox.Show("No se logró acceder a la base de datos", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lbl_tabla_vacia.Visible = true;
+                img_tabla_vacia.Visible = true;
+                label1.Visible = false;
+                txt_usuario_cambio.Visible = false;
+                txt_fecha_cambio.Visible = false;
+                btn_editar_producto.Visible = false;
+                btn_eliminar_producto.Visible = false;
+                dg_productos.Visible = false;
             }
             else
             {
+                lbl_tabla_vacia.Visible = false;
+                img_tabla_vacia.Visible = false;
+                label1.Visible = true;
+                txt_usuario_cambio.Visible = true;
+                txt_fecha_cambio.Visible = true;
+                btn_editar_producto.Visible = true;
+                btn_eliminar_producto.Visible = true;
+                dg_productos.Visible = true;
                 dg_productos.DataSource = datos.DefaultView;
             }
         }
@@ -54,9 +69,9 @@ namespace Proyecto_fina
                 frm.cb_departamento_producto.Text = dg_productos.CurrentRow.Cells[1].Value.ToString();
                 frm.cb_descuento_producto.Text = dg_productos.CurrentRow.Cells[2].Value.ToString(); 
                 //frm.txt_cantidad_descuento_producto.Value = (int)dg_productos.CurrentRow.Cells[9].Value; //
-                frm.txt_existencia_producto.Value = (decimal)(double)dg_productos.CurrentRow.Cells[4].Value;
+                frm.txt_existencia_producto.Value = Convert.ToDecimal(dg_productos.CurrentRow.Cells[4].Value);
                 frm.cb_unidad_medida_producto.Text = dg_productos.CurrentRow.Cells[5].Value.ToString();
-                frm.txt_punto_reorden_producto.Value = (int)dg_productos.CurrentRow.Cells[9].Value;
+                frm.txt_punto_reorden_producto.Value = Convert.ToDecimal(dg_productos.CurrentRow.Cells[9].Value);
                 frm.txt_costo_producto.Value = Convert.ToDecimal(dg_productos.CurrentRow.Cells[6].Value);
                 frm.txt_precio_unitario_producto.Value = Convert.ToDecimal(dg_productos.CurrentRow.Cells[7].Value);
                 frm.txt_descripcion_producto.Text = dg_productos.CurrentRow.Cells[10].Value.ToString();
@@ -134,14 +149,13 @@ namespace Proyecto_fina
             int merma;
 
         }
-
-        private void dg_productos_SelectionChanged(object sender, EventArgs e)
+        private void dg_productos_SelectionChanged_1(object sender, EventArgs e)
         {
             if (dg_productos.SelectedRows.Count > 0)
             {
-                label6.Visible = true;
-                lbl_usuario_cambio.Visible = true;
-                lbl_fecha_cambio.Visible = true;
+                label1.Visible = true;
+                txt_usuario_cambio.Visible = true;
+                txt_fecha_cambio.Visible = true;
 
                 p.Codigo_producto = (int)dg_productos.CurrentRow.Cells[0].Value;
 
@@ -152,8 +166,8 @@ namespace Proyecto_fina
                 {
                     rd.Read();
                     rd2.Read();
-                    lbl_usuario_cambio.Text = rd.GetString(0);
-                    lbl_fecha_cambio.Text = rd2.GetDateTime(0).ToString();
+                    txt_usuario_cambio.Text = rd.GetString(0);
+                    txt_fecha_cambio.Text = rd2.GetDateTime(0).ToString();
                 }
             }
         }

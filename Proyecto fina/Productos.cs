@@ -17,9 +17,9 @@ namespace Proyecto_fina
         private float precio_unitario;
         private string descripcion;
         private string fecha_alta;
-        private int cantidad_existencia;
-        private int cantidad_merma;
-        private int punto_reorden;
+        private float cantidad_existencia;
+        private float cantidad_merma;
+        private float punto_reorden;
         private int habilitado_para_venta;
         private int id_usuario;
 
@@ -31,9 +31,9 @@ namespace Proyecto_fina
         private float nuevo_precio_unitario;
         private string nueva_descripcion;
         private string nuevo_fecha_alta;
-        private int nuevo_cantidad_existencia;
-        private int nuevo_cantidad_merma;
-        private int nuevo_punto_reorden;
+        private float nuevo_cantidad_existencia;
+        private float nuevo_cantidad_merma;
+        private float nuevo_punto_reorden;
         private int nuevo_habilitado_para_venta;
         private int nuevo_id_usuario;
 
@@ -68,9 +68,9 @@ namespace Proyecto_fina
         public float Costo { get => costo; set => costo = value; }
         public float Precio_unitario { get => precio_unitario; set => precio_unitario = value; }
         public string Fecha_alta { get => fecha_alta; set => fecha_alta = value; }
-        public int Cantidad_existencia { get => cantidad_existencia; set => cantidad_existencia = value; }
-        public int Cantidad_merma { get => cantidad_merma; set => cantidad_merma = value; }
-        public int Punto_reorden { get => punto_reorden; set => punto_reorden = value; }
+        public float Cantidad_existencia { get => cantidad_existencia; set => cantidad_existencia = value; }
+        public float Cantidad_merma { get => cantidad_merma; set => cantidad_merma = value; }
+        public float Punto_reorden { get => punto_reorden; set => punto_reorden = value; }
         public int Habilitado_para_venta { get => habilitado_para_venta; set => habilitado_para_venta = value; }
         public int Id_usuario { get => id_usuario; set => id_usuario = value; }
         public int Codigo_producto { get => codigo_producto; set => codigo_producto = value; }
@@ -79,9 +79,9 @@ namespace Proyecto_fina
         public float Nuevo_costo { get => nuevo_costo; set => nuevo_costo = value; }
         public float Nuevo_precio_unitario { get => nuevo_precio_unitario; set => nuevo_precio_unitario = value; }
         public string Nuevo_fecha_alta { get => nuevo_fecha_alta; set => nuevo_fecha_alta = value; }
-        public int Nuevo_cantidad_existencia { get => nuevo_cantidad_existencia; set => nuevo_cantidad_existencia = value; }
-        public int Nuevo_cantidad_merma { get => nuevo_cantidad_merma; set => nuevo_cantidad_merma = value; }
-        public int Nuevo_punto_reorden { get => nuevo_punto_reorden; set => nuevo_punto_reorden = value; }
+        public float Nuevo_cantidad_existencia { get => nuevo_cantidad_existencia; set => nuevo_cantidad_existencia = value; }
+        public float Nuevo_cantidad_merma { get => nuevo_cantidad_merma; set => nuevo_cantidad_merma = value; }
+        public float Nuevo_punto_reorden { get => nuevo_punto_reorden; set => nuevo_punto_reorden = value; }
         public int Nuevo_habilitado_para_venta { get => nuevo_habilitado_para_venta; set => nuevo_habilitado_para_venta = value; }
         public int Nuevo_id_usuario { get => nuevo_id_usuario; set => nuevo_id_usuario = value; }
         public int Id_departamento { get => id_departamento; set => id_departamento = value; }

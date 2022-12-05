@@ -39,6 +39,32 @@ namespace Proyecto_fina
                 return false;
             }
         }
+        public static bool existeDepartamento(string dpto)
+        {
+            try
+            {
+                Conexion con = new Conexion();
+                SqlCommand cmd = new SqlCommand("SP_EXISTE_DEPARTAMENTO", con.conectar());
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@nombre_departamento", dpto);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                if (dt.Rows.Count >= 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
         public DataTable cargarDepartamentos()
         {
             try

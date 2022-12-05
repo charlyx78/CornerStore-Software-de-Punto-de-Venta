@@ -22,6 +22,7 @@ namespace Proyecto_fina
             lbl_nombre_cajero.Text = Utilidades.getNombreUsuario(id_usuario_rol);
             id_usuario_rol_pagina = id_usuario_rol;
             caja_activa = caja;
+            lbl_caja.Text = "CAJA " + caja_activa.ToString();
             //Estas lineas eliminan los parpadeos del formulario o controles en la interfaz grafica (Pero no en un 100%)
             this.SetStyle(ControlStyles.ResizeRedraw, true);
             this.DoubleBuffered = true;
@@ -29,7 +30,7 @@ namespace Proyecto_fina
         private void AbrirFormularioHijo(object formahija)
         {
             if (this.panel_formularios.Controls.Count > 0)
-                this.panel_formularios.Controls.RemoveAt(0);
+            this.panel_formularios.Controls.RemoveAt(0);
             Form fh = formahija as Form;
             fh.TopLevel = false;
             fh.Dock = DockStyle.Fill;

@@ -79,7 +79,7 @@ namespace Proyecto_fina
             SqlDataReader rd2 = comando.ExecuteReader();
             return rd2;
         }
-        public SqlDataReader convertirID(string idColumn, string table, string column, string value)
+        public static SqlDataReader convertirID(string idColumn, string table, string column, string value)
         {
             Conexion con = new Conexion();
             string deptos = "SELECT " + idColumn + " FROM " + table + " WHERE " + column + "= '" + value + "';";

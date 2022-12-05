@@ -35,15 +35,22 @@ namespace Proyecto_fina
                 {
                     dptos.Nombre_departamento = txt_nombre_departamento.Text.Trim().ToUpper();
                     dptos.Id_usuario = id_usuario_rol_pagina;
-                    if (DepartamentosCAD.insertarDepartamento(dptos))
+                    if (!DepartamentosCAD.existeDepartamento(txt_nombre_departamento.Text.Trim()))
                     {
-                        MessageBox.Show("Departamento guardado exitosamente", "EXITO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        guardado = 1;
-                        this.Close();
+                        if (DepartamentosCAD.insertarDepartamento(dptos))
+                        {
+                            MessageBox.Show("Departamento guardado exitosamente", "EXITO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            guardado = 1;
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("El departamento que intenta guardar ya existe", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("El departamento que intenta guardar ya existe", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Ya existe un departamento con el nombre '" + txt_nombre_departamento.Text + "' en la base de datos", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception ex)

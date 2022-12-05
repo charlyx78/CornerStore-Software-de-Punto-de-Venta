@@ -111,13 +111,13 @@ namespace Proyecto_fina
             }
         }
 
-        private void dg_descuentos_SelectionChanged(object sender, EventArgs e)
+        private void dg_descuentos_SelectionChanged_1(object sender, EventArgs e)
         {
             if (dg_descuentos.SelectedRows.Count > 0)
             {
                 label1.Visible = true;
-                lbl_usuario_cambio.Visible = true;
-                lbl_fecha_cambio.Visible = true;
+                txt_usuario_cambio.Visible = true;
+                txt_fecha_cambio.Visible = true;
 
                 dsc.Id_descuento = (int)dg_descuentos.CurrentRow.Cells[0].Value;
 
@@ -129,8 +129,8 @@ namespace Proyecto_fina
                 {
                     rd.Read();
                     rd2.Read();
-                    lbl_usuario_cambio.Text = rd.GetString(0);
-                    lbl_fecha_cambio.Text = rd2.GetDateTime(0).ToString();
+                    txt_usuario_cambio.Text = rd.GetString(0);
+                    txt_fecha_cambio.Text = rd2.GetDateTime(0).ToString();
                 }
             }
         }

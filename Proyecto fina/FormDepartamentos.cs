@@ -32,12 +32,27 @@ namespace Proyecto_fina
         {
             this.dg_departamentos.DefaultCellStyle.ForeColor = Color.Black;
             DataTable datos = departamentos.cargarDepartamentos();
-            if(datos == null)
+            if(datos.Rows.Count==0)
             {
-                MessageBox.Show("No se logró acceder a la base de datos", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lbl_tabla_vacia.Visible = true;
+                img_tabla_vacia.Visible = true;
+                label1.Visible = false;
+                txt_usuario_cambio.Visible = false;
+                txt_fecha_cambio.Visible = false;
+                btn_editar_departamento.Visible = false;
+                btn_eliminar_departamento.Visible = false;
+                dg_departamentos.Visible = false;
             }
             else
             {
+                lbl_tabla_vacia.Visible = false;
+                img_tabla_vacia.Visible = false;
+                label1.Visible = true;
+                txt_usuario_cambio.Visible = true;
+                txt_fecha_cambio.Visible = true;
+                btn_editar_departamento.Visible = true;
+                btn_eliminar_departamento.Visible = true;
+                dg_departamentos.Visible = true;
                 dg_departamentos.DataSource = datos.DefaultView;
             }
         }
@@ -112,7 +127,7 @@ namespace Proyecto_fina
                 try
                 {
                     d.Id_departamento = (int)dg_departamentos.CurrentRow.Cells[0].Value;
-                    DialogResult eliminar = MessageBox.Show("¿Está seguro(a) que desea eliminar el departamento con ID:" + d.Id_departamento + "?", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult eliminar = MessageBox.Show("¿Está seguro(a) que desea eliminar el departamento con ID:" + d.Id_departamento + "? No podrá visualizar los productos pertenecientes a éste.", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if(eliminar == DialogResult.Yes)
                     {
                         d.Nuevo_id_usuario = id_usuario_rol_pagina;
@@ -136,11 +151,6 @@ namespace Proyecto_fina
                     MessageBox.Show(ex.Message);
                 }
             }
-        }
-
-        private void txt_usuario_cambio_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

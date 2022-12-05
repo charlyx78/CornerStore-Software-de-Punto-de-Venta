@@ -79,6 +79,7 @@ namespace Proyecto_fina
             // 
             // txt_existencia_producto
             // 
+            this.txt_existencia_producto.DecimalPlaces = 2;
             this.txt_existencia_producto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_existencia_producto.Location = new System.Drawing.Point(7, 190);
             this.txt_existencia_producto.Maximum = new decimal(new int[] {
@@ -333,6 +334,7 @@ namespace Proyecto_fina
             // 
             // txt_punto_reorden_producto
             // 
+            this.txt_punto_reorden_producto.DecimalPlaces = 2;
             this.txt_punto_reorden_producto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_punto_reorden_producto.Location = new System.Drawing.Point(7, 244);
             this.txt_punto_reorden_producto.Maximum = new decimal(new int[] {

@@ -77,25 +77,25 @@ namespace Proyecto_fina
                             {
                                 for (int i = 0; i < frm.dg_carrito.RowCount; i++)
                                 {
-                                    if (id_producto == Convert.ToInt32(frm.dg_carrito.Rows[i].Cells["id_producto"].Value))
+                                    if (id_producto == Convert.ToInt32(frm.dg_carrito.Rows[i].Cells[1].Value))
                                     {
-                                        stock_temp -= (int)frm.dg_carrito.Rows[i].Cells["cantidad"].Value;
+                                        stock_temp -= (int)frm.dg_carrito.Rows[i].Cells[3].Value;
                                         if ((double)txt_cantidad_nombre_producto.Value > stock_temp)
                                         {
                                             MessageBox.Show("No hay suficientes productos en el inventario", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                         }
                                         else
                                         {
-                                            int cantidad = (int)frm.dg_carrito.Rows[i].Cells["cantidad"].Value + (int)txt_cantidad_nombre_producto.Value;
-                                            int descuento = (int)frm.dg_carrito.Rows[i].Cells["descuento_producto"].Value;
-                                            double precio = (double)frm.dg_carrito.Rows[i].Cells["precio_producto"].Value;
+                                            int cantidad = (int)frm.dg_carrito.Rows[i].Cells[3].Value + (int)txt_cantidad_nombre_producto.Value;
+                                            int descuento = (int)frm.dg_carrito.Rows[i].Cells[6].Value;
+                                            double precio = (double)frm.dg_carrito.Rows[i].Cells[5].Value;
                                             double subtotal = cantidad * precio;
                                             double total_descuento = Math.Round(((double)subtotal * ((double)((int)descuento) / 100)), 2);
                                             double total = (subtotal - (total_descuento)) * frm.iva;
-                                            frm.dg_carrito.Rows[i].Cells["cantidad"].Value = cantidad;
-                                            frm.dg_carrito.Rows[i].Cells["total_descuento_producto"].Value = total_descuento;
-                                            frm.dg_carrito.Rows[i].Cells["subtotal"].Value = Math.Round(subtotal, 2);
-                                            frm.dg_carrito.Rows[i].Cells["total"].Value = Math.Round(total, 2);
+                                            frm.dg_carrito.Rows[i].Cells[3].Value = cantidad;
+                                            frm.dg_carrito.Rows[i].Cells[7].Value = total_descuento;
+                                            frm.dg_carrito.Rows[i].Cells[8].Value = Math.Round(subtotal, 2);
+                                            frm.dg_carrito.Rows[i].Cells[9].Value = Math.Round(total, 2);
                                         }
                                     }
                                 }
@@ -138,9 +138,9 @@ namespace Proyecto_fina
                             double totalCarrito = 0;
                             foreach (DataGridViewRow row in frm.dg_carrito.Rows)
                             {
-                                descuentoTotalCarrito += (double)row.Cells["total_descuento_producto"].Value;
-                                subtotalCarrito += (double)row.Cells["subtotal"].Value;
-                                totalCarrito += (double)row.Cells["total"].Value;
+                                descuentoTotalCarrito += (double)row.Cells[7].Value;
+                                subtotalCarrito += (double)row.Cells[8].Value;
+                                totalCarrito += (double)row.Cells[9].Value;
                             }
                             frm.descuento = descuentoTotalCarrito;
                             frm.txt_subtotal_carrito.Value = (decimal)(double)subtotalCarrito;
@@ -168,6 +168,11 @@ namespace Proyecto_fina
             {
                 MessageBox.Show("Seleccione la cantidad de productos a agregar", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

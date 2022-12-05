@@ -46,6 +46,7 @@ namespace Proyecto_fina
             this.label1 = new System.Windows.Forms.Label();
             this.panel_titulo = new System.Windows.Forms.Panel();
             this.btn_maximizar = new System.Windows.Forms.PictureBox();
+            this.lbl_caja = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_restaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_minimizar)).BeginInit();
@@ -67,6 +68,7 @@ namespace Proyecto_fina
             this.flowLayoutPanel1.Controls.Add(this.lbl_nombre_cajero);
             this.flowLayoutPanel1.Controls.Add(this.lbl_fecha);
             this.flowLayoutPanel1.Controls.Add(this.lbl_hora);
+            this.flowLayoutPanel1.Controls.Add(this.lbl_caja);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(200, 12);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(969, 28);
@@ -150,7 +152,7 @@ namespace Proyecto_fina
             // 
             // panel_formularios
             // 
-            this.panel_formularios.BackColor = System.Drawing.Color.White;
+            this.panel_formularios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(63)))));
             this.panel_formularios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_formularios.ForeColor = System.Drawing.Color.Gainsboro;
             this.panel_formularios.Location = new System.Drawing.Point(200, 40);
@@ -262,6 +264,18 @@ namespace Proyecto_fina
             this.btn_maximizar.TabStop = false;
             this.btn_maximizar.Click += new System.EventHandler(this.btn_maximizar_Click_1);
             // 
+            // lbl_caja
+            // 
+            this.lbl_caja.AutoSize = true;
+            this.lbl_caja.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_caja.ForeColor = System.Drawing.Color.White;
+            this.lbl_caja.Location = new System.Drawing.Point(426, 0);
+            this.lbl_caja.Name = "lbl_caja";
+            this.lbl_caja.Size = new System.Drawing.Size(45, 16);
+            this.lbl_caja.TabIndex = 8;
+            this.lbl_caja.Text = "label2";
+            this.lbl_caja.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -306,5 +320,6 @@ namespace Proyecto_fina
         private System.Windows.Forms.Panel panel_titulo;
         private System.Windows.Forms.PictureBox btn_maximizar;
         private System.Windows.Forms.Button btn_pagina_devolucion;
+        private System.Windows.Forms.Label lbl_caja;
     }
 }

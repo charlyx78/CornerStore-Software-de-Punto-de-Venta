@@ -41,25 +41,25 @@ namespace Proyecto_fina
                             {
                                 for (int i = 0; i < dg_carrito.RowCount; i++)
                                 {
-                                    if (id_producto == Convert.ToInt32(dg_carrito.Rows[i].Cells["id_producto"].Value))
+                                    if (id_producto == Convert.ToInt32(dg_carrito.Rows[i].Cells[1].Value))
                                     {
-                                        stock_temp -= (int)dg_carrito.Rows[i].Cells["cantidad"].Value;
+                                        stock_temp -= (int)dg_carrito.Rows[i].Cells[3].Value;
                                         if ((double)txt_cantidad_producto_carrito.Value > stock_temp)
                                         {
                                             MessageBox.Show("No hay suficientes productos en el inventario", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                         }
                                         else
                                         {
-                                            int cantidad = (int)dg_carrito.Rows[i].Cells["cantidad"].Value + (int)txt_cantidad_producto_carrito.Value;
-                                            int descuento = (int)dg_carrito.Rows[i].Cells["descuento_producto"].Value;
-                                            double precio = (double)dg_carrito.Rows[i].Cells["precio_producto"].Value;
+                                            int cantidad = (int)dg_carrito.Rows[i].Cells[3].Value + (int)txt_cantidad_producto_carrito.Value;
+                                            int descuento = (int)dg_carrito.Rows[i].Cells[6].Value;
+                                            double precio = (double)dg_carrito.Rows[i].Cells[5].Value;
                                             double subtotal = cantidad * precio;
                                             double total_descuento = Math.Round(((double)subtotal * ((double)((int)descuento) / 100)), 2);
                                             double total = (subtotal - (total_descuento)) * iva;
-                                            dg_carrito.Rows[i].Cells["cantidad"].Value = cantidad;
-                                            dg_carrito.Rows[i].Cells["total_descuento_producto"].Value = total_descuento;
-                                            dg_carrito.Rows[i].Cells["subtotal"].Value = Math.Round(subtotal, 2);
-                                            dg_carrito.Rows[i].Cells["total"].Value = Math.Round(total, 2);
+                                            dg_carrito.Rows[i].Cells[3].Value = cantidad;
+                                            dg_carrito.Rows[i].Cells[7].Value = total_descuento;
+                                            dg_carrito.Rows[i].Cells[8].Value = Math.Round(subtotal, 2);
+                                            dg_carrito.Rows[i].Cells[9].Value = Math.Round(total, 2);
                                         }
                                     }
                                 }
@@ -97,18 +97,7 @@ namespace Proyecto_fina
                                     lista++;
                                 }
                             }
-                            double descuentoTotalCarrito = 0;
-                            double subtotalCarrito = 0;
-                            double totalCarrito = 0;
-                            foreach (DataGridViewRow row in dg_carrito.Rows)
-                            {
-                                descuentoTotalCarrito += (double)row.Cells["total_descuento_producto"].Value;
-                                subtotalCarrito += (double)row.Cells["subtotal"].Value;
-                                totalCarrito += (double)row.Cells["total"].Value;
-                            }
-                            descuento = descuentoTotalCarrito;
-                            txt_subtotal_carrito.Value = (decimal)(double)subtotalCarrito;
-                            txt_total_carrito.Value = (decimal)(double)totalCarrito;
+                            calcularTotales();
                         }
                         else
                         {
@@ -141,7 +130,7 @@ namespace Proyecto_fina
             bool existe = false;
             for(int i = 0; i< dg_carrito.RowCount; i++)
             {
-                if(Convert.ToInt32(dg_carrito.Rows[i].Cells["id_producto"].Value) == codigo_producto)
+                if(Convert.ToInt32(dg_carrito.Rows[i].Cells[1].Value) == codigo_producto)
                 {
                     existe = true;
                     return existe;
@@ -238,6 +227,51 @@ namespace Proyecto_fina
             {
                 return false;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            float precio = getPrecioProducto((int)txt_codigo_producto_carrito.Value) * (float)txt_cantidad_producto_carrito.Value;
+            MessageBox.Show("$" + precio, "PRECIO", MessageBoxButtons.OK);
+        }
+        public int getPrecioProducto(int id_producto)
+        {
+            int cantidad = 0;
+            Conexion con = new Conexion();
+            SqlCommand cmd = new SqlCommand("SP_BUSCAR_PRECIO", con.conectar());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@id_producto", id_producto);
+            cantidad = Convert.ToInt32(cmd.ExecuteScalar());
+            return cantidad;
+        }
+
+        private void btn_eliminar_producto_carrito_Click(object sender, EventArgs e)
+        {
+            if (dg_carrito.RowCount > 0)
+            {
+                int filaSeleccionada = dg_carrito.CurrentRow.Index;
+                dg_carrito.Rows.RemoveAt(filaSeleccionada);
+                calcularTotales();
+            }
+            else
+            {
+                MessageBox.Show("No hay productos en el carrito para eliminar", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void calcularTotales()
+        {
+            double descuentoTotalCarrito = 0;
+            double subtotalCarrito = 0;
+            double totalCarrito = 0;
+            foreach (DataGridViewRow row in dg_carrito.Rows)
+            {
+                descuentoTotalCarrito += (double)row.Cells[7].Value;
+                subtotalCarrito += (double)row.Cells[8].Value;
+                totalCarrito += (double)row.Cells[9].Value;
+            }
+            descuento = descuentoTotalCarrito;
+            txt_subtotal_carrito.Value = (decimal)(double)subtotalCarrito;
+            txt_total_carrito.Value = (decimal)(double)totalCarrito;
         }
     }
 }

@@ -64,10 +64,10 @@ namespace Proyecto_fina
         {
             int id_producto = id;
             FormVenta frm = Owner as FormVenta;
-            double stock_temp = (double)frm.getCantidadInventario(id_producto);
+            float stock_temp = (float)frm.getCantidadInventario(id_producto);
             if (txt_cantidad_nombre_producto.Value > 0)
             {
-                if (frm.getCantidadInventario(id_producto) >= txt_cantidad_nombre_producto.Value)
+                if ((float)frm.getCantidadInventario(id_producto) >= (float)txt_cantidad_nombre_producto.Value)
                 {
                     try
                     {
@@ -79,14 +79,14 @@ namespace Proyecto_fina
                                 {
                                     if (id_producto == Convert.ToInt32(frm.dg_carrito.Rows[i].Cells[1].Value))
                                     {
-                                        stock_temp -= (int)frm.dg_carrito.Rows[i].Cells[3].Value;
-                                        if ((double)txt_cantidad_nombre_producto.Value > stock_temp)
+                                        stock_temp -= (float)frm.dg_carrito.Rows[i].Cells[3].Value;
+                                        if ((float)txt_cantidad_nombre_producto.Value > stock_temp)
                                         {
                                             MessageBox.Show("No hay suficientes productos en el inventario", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                         }
                                         else
                                         {
-                                            int cantidad = (int)frm.dg_carrito.Rows[i].Cells[3].Value + (int)txt_cantidad_nombre_producto.Value;
+                                            float cantidad = (float)frm.dg_carrito.Rows[i].Cells[3].Value + (float)txt_cantidad_nombre_producto.Value;
                                             int descuento = (int)frm.dg_carrito.Rows[i].Cells[6].Value;
                                             double precio = (double)frm.dg_carrito.Rows[i].Cells[5].Value;
                                             double subtotal = cantidad * precio;
@@ -103,7 +103,7 @@ namespace Proyecto_fina
                             else
                             {
                                 string nombre = "";
-                                int cantidad = 0;
+                                float cantidad = 0;
                                 double precio = 0;
                                 string um = "";
                                 int descuento = 0;
@@ -122,7 +122,7 @@ namespace Proyecto_fina
                                 {
                                     id_producto = (int)dt.Rows[0][0];
                                     nombre = (string)dt.Rows[0][1];
-                                    cantidad = (int)txt_cantidad_nombre_producto.Value;
+                                    cantidad = (float)txt_cantidad_nombre_producto.Value;
                                     um = (string)dt.Rows[0][2];
                                     precio = (double)dt.Rows[0][4];
                                     descuento = frm.validarDescuento(id_producto);

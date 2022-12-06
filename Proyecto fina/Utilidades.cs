@@ -213,7 +213,7 @@ namespace Proyecto_fina
             }
 
             // se le pasan los Aticulos  con sus detalles
-            public void AgregaArticulo(string Articulo, double precio, int cant, double subtotal, int desc)
+            public void AgregaArticulo(string Articulo, double precio, float cant, double subtotal, int desc)
             {
                 if (cant.ToString().Length <= 5 && precio.ToString("c").Length <= 15 && subtotal.ToString("c").Length <= 16 && desc.ToString().Length <= 8) // valida que cant precio y total esten dentro de rango
                 {

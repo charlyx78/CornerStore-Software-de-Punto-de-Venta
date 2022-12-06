@@ -138,5 +138,10 @@ namespace Proyecto_fina
                 img_tabla_vacia.Visible = true;
             }
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

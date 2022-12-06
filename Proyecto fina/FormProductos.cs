@@ -98,11 +98,6 @@ namespace Proyecto_fina
             mostrarProductos();
         }
 
-        private void btn_cerrar_productos_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void btn_eliminar_producto_Click(object sender, EventArgs e)
         {
             if (dg_productos.SelectedRows.Count <= 0)
@@ -169,6 +164,18 @@ namespace Proyecto_fina
                     txt_usuario_cambio.Text = rd.GetString(0);
                     txt_fecha_cambio.Text = rd2.GetDateTime(0).ToString();
                 }
+            }
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult cerrar = MessageBox.Show("¿Está seguro que quieres cerrar esta pestaña? Cualquier cambio no guardado se perderá", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (cerrar == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else if (cerrar == DialogResult.No)
+            {
+                return;
             }
         }
     }

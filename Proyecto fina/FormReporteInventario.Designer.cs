@@ -29,10 +29,9 @@ namespace Proyecto_fina
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_cerrar_productos = new System.Windows.Forms.Button();
             this.dg_productos = new System.Windows.Forms.DataGridView();
             this.id_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre_departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,9 +54,12 @@ namespace Proyecto_fina
             this.label4 = new System.Windows.Forms.Label();
             this.btn_filtros = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dg_productos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_tabla_vacia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_existencia_minima)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -71,22 +73,6 @@ namespace Proyecto_fina
             this.label1.TabIndex = 84;
             this.label1.Text = "Inventario de productos";
             // 
-            // btn_cerrar_productos
-            // 
-            this.btn_cerrar_productos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_cerrar_productos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            this.btn_cerrar_productos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_cerrar_productos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_cerrar_productos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cerrar_productos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_cerrar_productos.Location = new System.Drawing.Point(1020, 47);
-            this.btn_cerrar_productos.Name = "btn_cerrar_productos";
-            this.btn_cerrar_productos.Size = new System.Drawing.Size(32, 25);
-            this.btn_cerrar_productos.TabIndex = 89;
-            this.btn_cerrar_productos.Text = "X";
-            this.btn_cerrar_productos.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_cerrar_productos.UseVisualStyleBackColor = false;
-            // 
             // dg_productos
             // 
             this.dg_productos.AllowUserToAddRows = false;
@@ -97,18 +83,18 @@ namespace Proyecto_fina
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dg_productos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dg_productos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(63)))));
+            this.dg_productos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
             this.dg_productos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dg_productos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.NullValue = null;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_productos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.NullValue = null;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_productos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dg_productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dg_productos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_producto,
@@ -122,22 +108,22 @@ namespace Proyecto_fina
             this.merma_producto});
             this.dg_productos.EnableHeadersVisualStyles = false;
             this.dg_productos.GridColor = System.Drawing.SystemColors.Control;
-            this.dg_productos.Location = new System.Drawing.Point(12, 119);
+            this.dg_productos.Location = new System.Drawing.Point(12, 132);
             this.dg_productos.Name = "dg_productos";
             this.dg_productos.ReadOnly = true;
             this.dg_productos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dg_productos.RowHeadersVisible = false;
             this.dg_productos.RowHeadersWidth = 80;
             this.dg_productos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.NullValue = null;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(208)))), ((int)(((byte)(193)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            this.dg_productos.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.NullValue = null;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(208)))), ((int)(((byte)(193)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            this.dg_productos.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dg_productos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dg_productos.Size = new System.Drawing.Size(991, 510);
+            this.dg_productos.Size = new System.Drawing.Size(991, 483);
             this.dg_productos.TabIndex = 90;
             // 
             // id_producto
@@ -197,6 +183,7 @@ namespace Proyecto_fina
             // lbl_tabla_vacia
             // 
             this.lbl_tabla_vacia.AutoSize = true;
+            this.lbl_tabla_vacia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
             this.lbl_tabla_vacia.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_tabla_vacia.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbl_tabla_vacia.Location = new System.Drawing.Point(236, 381);
@@ -208,6 +195,7 @@ namespace Proyecto_fina
             // 
             // img_tabla_vacia
             // 
+            this.img_tabla_vacia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
             this.img_tabla_vacia.Image = global::Proyecto_fina.Properties.Resources.nada_encontrado;
             this.img_tabla_vacia.Location = new System.Drawing.Point(460, 271);
             this.img_tabla_vacia.Name = "img_tabla_vacia";
@@ -221,7 +209,7 @@ namespace Proyecto_fina
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(13, 70);
+            this.label2.Location = new System.Drawing.Point(6, 8);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 16);
             this.label2.TabIndex = 93;
@@ -231,7 +219,7 @@ namespace Proyecto_fina
             // 
             this.cb_departamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_departamento.FormattingEnabled = true;
-            this.cb_departamento.Location = new System.Drawing.Point(16, 89);
+            this.cb_departamento.Location = new System.Drawing.Point(9, 27);
             this.cb_departamento.Name = "cb_departamento";
             this.cb_departamento.Size = new System.Drawing.Size(195, 24);
             this.cb_departamento.TabIndex = 94;
@@ -241,7 +229,7 @@ namespace Proyecto_fina
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(231, 70);
+            this.label3.Location = new System.Drawing.Point(224, 8);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(115, 16);
             this.label3.TabIndex = 96;
@@ -250,7 +238,7 @@ namespace Proyecto_fina
             // txt_existencia_minima
             // 
             this.txt_existencia_minima.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_existencia_minima.Location = new System.Drawing.Point(234, 89);
+            this.txt_existencia_minima.Location = new System.Drawing.Point(227, 27);
             this.txt_existencia_minima.Name = "txt_existencia_minima";
             this.txt_existencia_minima.Size = new System.Drawing.Size(120, 24);
             this.txt_existencia_minima.TabIndex = 97;
@@ -260,7 +248,7 @@ namespace Proyecto_fina
             this.chb_productos_mermados.AutoSize = true;
             this.chb_productos_mermados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chb_productos_mermados.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.chb_productos_mermados.Location = new System.Drawing.Point(533, 91);
+            this.chb_productos_mermados.Location = new System.Drawing.Point(526, 29);
             this.chb_productos_mermados.Name = "chb_productos_mermados";
             this.chb_productos_mermados.Size = new System.Drawing.Size(156, 20);
             this.chb_productos_mermados.TabIndex = 100;
@@ -273,7 +261,7 @@ namespace Proyecto_fina
             this.rb_productos_agotados_si.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.rb_productos_agotados_si.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rb_productos_agotados_si.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.rb_productos_agotados_si.Location = new System.Drawing.Point(380, 91);
+            this.rb_productos_agotados_si.Location = new System.Drawing.Point(373, 29);
             this.rb_productos_agotados_si.Name = "rb_productos_agotados_si";
             this.rb_productos_agotados_si.Size = new System.Drawing.Size(38, 20);
             this.rb_productos_agotados_si.TabIndex = 101;
@@ -287,7 +275,7 @@ namespace Proyecto_fina
             this.rb_productos_agotados_no.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.rb_productos_agotados_no.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rb_productos_agotados_no.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.rb_productos_agotados_no.Location = new System.Drawing.Point(444, 90);
+            this.rb_productos_agotados_no.Location = new System.Drawing.Point(437, 28);
             this.rb_productos_agotados_no.Name = "rb_productos_agotados_no";
             this.rb_productos_agotados_no.Size = new System.Drawing.Size(44, 20);
             this.rb_productos_agotados_no.TabIndex = 102;
@@ -300,7 +288,7 @@ namespace Proyecto_fina
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(377, 70);
+            this.label4.Location = new System.Drawing.Point(370, 8);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(130, 16);
             this.label4.TabIndex = 103;
@@ -314,7 +302,7 @@ namespace Proyecto_fina
             this.btn_filtros.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_filtros.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_filtros.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_filtros.Location = new System.Drawing.Point(715, 88);
+            this.btn_filtros.Location = new System.Drawing.Point(879, 26);
             this.btn_filtros.Name = "btn_filtros";
             this.btn_filtros.Size = new System.Drawing.Size(104, 25);
             this.btn_filtros.TabIndex = 104;
@@ -334,26 +322,54 @@ namespace Proyecto_fina
             this.label5.TabIndex = 105;
             this.label5.Text = "Búsqueda por filtros";
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
+            this.panel1.Controls.Add(this.cb_departamento);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.btn_filtros);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.txt_existencia_minima);
+            this.panel1.Controls.Add(this.rb_productos_agotados_no);
+            this.panel1.Controls.Add(this.chb_productos_mermados);
+            this.panel1.Controls.Add(this.rb_productos_agotados_si);
+            this.panel1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.panel1.Location = new System.Drawing.Point(12, 66);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(991, 60);
+            this.panel1.TabIndex = 106;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Transparent;
+            this.button1.Image = global::Proyecto_fina.Properties.Resources.cerrar;
+            this.button1.Location = new System.Drawing.Point(1016, 66);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(36, 36);
+            this.button1.TabIndex = 112;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // FormReporteInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(63)))));
             this.ClientSize = new System.Drawing.Size(1064, 641);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.btn_filtros);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.rb_productos_agotados_no);
-            this.Controls.Add(this.rb_productos_agotados_si);
-            this.Controls.Add(this.chb_productos_mermados);
-            this.Controls.Add(this.txt_existencia_minima);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.cb_departamento);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.img_tabla_vacia);
             this.Controls.Add(this.lbl_tabla_vacia);
             this.Controls.Add(this.dg_productos);
-            this.Controls.Add(this.btn_cerrar_productos);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormReporteInventario";
@@ -362,6 +378,8 @@ namespace Proyecto_fina
             ((System.ComponentModel.ISupportInitialize)(this.dg_productos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_tabla_vacia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_existencia_minima)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -369,7 +387,6 @@ namespace Proyecto_fina
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btn_cerrar_productos;
         private System.Windows.Forms.DataGridView dg_productos;
         private System.Windows.Forms.Label lbl_tabla_vacia;
         private System.Windows.Forms.PictureBox img_tabla_vacia;
@@ -392,5 +409,7 @@ namespace Proyecto_fina
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btn_filtros;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
     }
 }

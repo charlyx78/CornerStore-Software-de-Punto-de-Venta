@@ -29,8 +29,8 @@ namespace Proyecto_fina
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_cantidad_producto_carrito = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,13 +56,13 @@ namespace Proyecto_fina
             this.total_carrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btn_pagar = new System.Windows.Forms.Button();
-            this.btn_agregar_producto_carrito = new System.Windows.Forms.Button();
             this.btn_eliminar_producto_carrito = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btn_agregar_producto_carrito = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btn_pagar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.txt_cantidad_producto_carrito)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_codigo_producto_carrito)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_total_carrito)).BeginInit();
@@ -246,15 +246,15 @@ namespace Proyecto_fina
             this.dg_carrito.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
             this.dg_carrito.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dg_carrito.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.NullValue = null;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_carrito.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.NullValue = null;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_carrito.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dg_carrito.ColumnHeadersHeight = 50;
             this.dg_carrito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dg_carrito.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -277,13 +277,13 @@ namespace Proyecto_fina
             this.dg_carrito.RowHeadersVisible = false;
             this.dg_carrito.RowHeadersWidth = 80;
             this.dg_carrito.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.NullValue = null;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(208)))), ((int)(((byte)(193)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            this.dg_carrito.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.NullValue = null;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(208)))), ((int)(((byte)(193)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            this.dg_carrito.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dg_carrito.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dg_carrito.Size = new System.Drawing.Size(781, 577);
             this.dg_carrito.TabIndex = 115;
@@ -375,6 +375,26 @@ namespace Proyecto_fina
             this.panel1.Size = new System.Drawing.Size(239, 285);
             this.panel1.TabIndex = 117;
             // 
+            // btn_eliminar_producto_carrito
+            // 
+            this.btn_eliminar_producto_carrito.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_eliminar_producto_carrito.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            this.btn_eliminar_producto_carrito.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_eliminar_producto_carrito.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_eliminar_producto_carrito.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_eliminar_producto_carrito.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_eliminar_producto_carrito.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_eliminar_producto_carrito.Image = global::Proyecto_fina.Properties.Resources.icons8_residuos_24;
+            this.btn_eliminar_producto_carrito.Location = new System.Drawing.Point(8, 173);
+            this.btn_eliminar_producto_carrito.Name = "btn_eliminar_producto_carrito";
+            this.btn_eliminar_producto_carrito.Size = new System.Drawing.Size(224, 42);
+            this.btn_eliminar_producto_carrito.TabIndex = 116;
+            this.btn_eliminar_producto_carrito.Text = "Eliminar producto";
+            this.btn_eliminar_producto_carrito.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_eliminar_producto_carrito.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_eliminar_producto_carrito.UseVisualStyleBackColor = false;
+            this.btn_eliminar_producto_carrito.Click += new System.EventHandler(this.btn_eliminar_producto_carrito_Click);
+            // 
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -388,46 +408,9 @@ namespace Proyecto_fina
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(105, 49);
             this.button1.TabIndex = 115;
-            this.button1.Text = "Buscar precio de producto";
+            this.button1.Text = "Ver precio de producto";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.txt_subtotal_carrito);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.txt_total_carrito);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.btn_pagar);
-            this.panel2.Location = new System.Drawing.Point(16, 348);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(239, 129);
-            this.panel2.TabIndex = 118;
-            // 
-            // btn_pagar
-            // 
-            this.btn_pagar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_pagar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            this.btn_pagar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_pagar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btn_pagar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_pagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_pagar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_pagar.Image = global::Proyecto_fina.Properties.Resources.icons8_dinero_30;
-            this.btn_pagar.Location = new System.Drawing.Point(8, 77);
-            this.btn_pagar.Name = "btn_pagar";
-            this.btn_pagar.Size = new System.Drawing.Size(224, 42);
-            this.btn_pagar.TabIndex = 105;
-            this.btn_pagar.Text = "Pagar";
-            this.btn_pagar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_pagar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btn_pagar.UseVisualStyleBackColor = false;
-            this.btn_pagar.Click += new System.EventHandler(this.btn_pagar_Click);
             // 
             // btn_agregar_producto_carrito
             // 
@@ -449,25 +432,35 @@ namespace Proyecto_fina
             this.btn_agregar_producto_carrito.UseVisualStyleBackColor = false;
             this.btn_agregar_producto_carrito.Click += new System.EventHandler(this.btn_nuevo_producto_Click);
             // 
-            // btn_eliminar_producto_carrito
+            // panel2
             // 
-            this.btn_eliminar_producto_carrito.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_eliminar_producto_carrito.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            this.btn_eliminar_producto_carrito.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_eliminar_producto_carrito.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btn_eliminar_producto_carrito.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_eliminar_producto_carrito.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_eliminar_producto_carrito.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_eliminar_producto_carrito.Image = global::Proyecto_fina.Properties.Resources.icons8_residuos_24;
-            this.btn_eliminar_producto_carrito.Location = new System.Drawing.Point(8, 173);
-            this.btn_eliminar_producto_carrito.Name = "btn_eliminar_producto_carrito";
-            this.btn_eliminar_producto_carrito.Size = new System.Drawing.Size(224, 42);
-            this.btn_eliminar_producto_carrito.TabIndex = 116;
-            this.btn_eliminar_producto_carrito.Text = "Eliminar producto";
-            this.btn_eliminar_producto_carrito.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_eliminar_producto_carrito.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btn_eliminar_producto_carrito.UseVisualStyleBackColor = false;
-            this.btn_eliminar_producto_carrito.Click += new System.EventHandler(this.btn_eliminar_producto_carrito_Click);
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.txt_subtotal_carrito);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.txt_total_carrito);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.btn_pagar);
+            this.panel2.Location = new System.Drawing.Point(16, 348);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(239, 129);
+            this.panel2.TabIndex = 118;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.SystemColors.Control;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label9.Location = new System.Drawing.Point(70, 46);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(15, 16);
+            this.label9.TabIndex = 118;
+            this.label9.Text = "$";
             // 
             // label5
             // 
@@ -482,18 +475,25 @@ namespace Proyecto_fina
             this.label5.TabIndex = 117;
             this.label5.Text = "$";
             // 
-            // label9
+            // btn_pagar
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.SystemColors.Control;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label9.Location = new System.Drawing.Point(70, 46);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(15, 16);
-            this.label9.TabIndex = 118;
-            this.label9.Text = "$";
+            this.btn_pagar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_pagar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            this.btn_pagar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_pagar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_pagar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_pagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_pagar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_pagar.Image = global::Proyecto_fina.Properties.Resources.icons8_dinero_30;
+            this.btn_pagar.Location = new System.Drawing.Point(8, 77);
+            this.btn_pagar.Name = "btn_pagar";
+            this.btn_pagar.Size = new System.Drawing.Size(224, 42);
+            this.btn_pagar.TabIndex = 105;
+            this.btn_pagar.Text = "Pagar";
+            this.btn_pagar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_pagar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_pagar.UseVisualStyleBackColor = false;
+            this.btn_pagar.Click += new System.EventHandler(this.btn_pagar_Click);
             // 
             // FormVenta
             // 

@@ -134,5 +134,18 @@ namespace Proyecto_fina
                 }
             }
         }
+
+        private void btn_cerrar_productos_Click(object sender, EventArgs e)
+        {
+            DialogResult cerrar = MessageBox.Show("¿Está seguro que quieres cerrar esta pestaña? Cualquier cambio no guardado se perderá", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (cerrar == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else if (cerrar == DialogResult.No)
+            {
+                return;
+            }
+        }
     }
 }

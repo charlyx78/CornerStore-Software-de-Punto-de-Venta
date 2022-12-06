@@ -104,18 +104,6 @@ namespace Proyecto_fina
                 }
             }
         }
-        private void btn_cerrar_productos_Click(object sender, EventArgs e)
-        {
-            DialogResult cerrar = MessageBox.Show("¿Está seguro que quieres cerrar esta pestaña? Cualquier cambio no guardado se perderá", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-            if (cerrar == DialogResult.Yes)
-            {
-                this.Close();
-            }
-            else if (cerrar == DialogResult.No)
-            {
-                return;
-            }
-        }
         private void btn_eliminar_departamento_Click(object sender, EventArgs e)
         {
             if (dg_departamentos.SelectedRows.Count <= 0)
@@ -150,6 +138,18 @@ namespace Proyecto_fina
                 {
                     MessageBox.Show(ex.Message);
                 }
+            }
+        }
+        private void btn_cerrar_productos_Click_1(object sender, EventArgs e)
+        {
+            DialogResult cerrar = MessageBox.Show("¿Está seguro que quieres cerrar esta pestaña? Cualquier cambio no guardado se perderá", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (cerrar == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else if (cerrar == DialogResult.No)
+            {
+                return;
             }
         }
     }

@@ -111,12 +111,11 @@ namespace Proyecto_fina
             this.btn_consulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_consulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_consulta.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_consulta.Location = new System.Drawing.Point(13, 255);
+            this.btn_consulta.Location = new System.Drawing.Point(0, 255);
             this.btn_consulta.Name = "btn_consulta";
-            this.btn_consulta.Size = new System.Drawing.Size(175, 30);
+            this.btn_consulta.Size = new System.Drawing.Size(200, 42);
             this.btn_consulta.TabIndex = 5;
             this.btn_consulta.Text = "Consultar";
-            this.btn_consulta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_consulta.UseVisualStyleBackColor = true;
             this.btn_consulta.Click += new System.EventHandler(this.btn_consulta_Click);
             // 
@@ -129,12 +128,11 @@ namespace Proyecto_fina
             this.btn_pagina_reportes_ventas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_pagina_reportes_ventas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_pagina_reportes_ventas.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_pagina_reportes_ventas.Location = new System.Drawing.Point(13, 198);
+            this.btn_pagina_reportes_ventas.Location = new System.Drawing.Point(0, 198);
             this.btn_pagina_reportes_ventas.Name = "btn_pagina_reportes_ventas";
-            this.btn_pagina_reportes_ventas.Size = new System.Drawing.Size(175, 30);
+            this.btn_pagina_reportes_ventas.Size = new System.Drawing.Size(200, 42);
             this.btn_pagina_reportes_ventas.TabIndex = 4;
-            this.btn_pagina_reportes_ventas.Text = "Reportes de inventario";
-            this.btn_pagina_reportes_ventas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_pagina_reportes_ventas.Text = "Inventario";
             this.btn_pagina_reportes_ventas.UseVisualStyleBackColor = true;
             this.btn_pagina_reportes_ventas.Click += new System.EventHandler(this.btn_pagina_reportes_ventas_Click);
             // 
@@ -147,12 +145,11 @@ namespace Proyecto_fina
             this.btn_pagina_productos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_pagina_productos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_pagina_productos.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_pagina_productos.Location = new System.Drawing.Point(13, 142);
+            this.btn_pagina_productos.Location = new System.Drawing.Point(0, 142);
             this.btn_pagina_productos.Name = "btn_pagina_productos";
-            this.btn_pagina_productos.Size = new System.Drawing.Size(175, 30);
+            this.btn_pagina_productos.Size = new System.Drawing.Size(200, 42);
             this.btn_pagina_productos.TabIndex = 3;
             this.btn_pagina_productos.Text = "Productos";
-            this.btn_pagina_productos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_pagina_productos.UseVisualStyleBackColor = true;
             this.btn_pagina_productos.Click += new System.EventHandler(this.btn_pagina_productos_Click);
             // 
@@ -165,12 +162,11 @@ namespace Proyecto_fina
             this.btn_pagina_descuentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_pagina_descuentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_pagina_descuentos.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_pagina_descuentos.Location = new System.Drawing.Point(13, 86);
+            this.btn_pagina_descuentos.Location = new System.Drawing.Point(0, 86);
             this.btn_pagina_descuentos.Name = "btn_pagina_descuentos";
-            this.btn_pagina_descuentos.Size = new System.Drawing.Size(175, 30);
+            this.btn_pagina_descuentos.Size = new System.Drawing.Size(200, 42);
             this.btn_pagina_descuentos.TabIndex = 2;
             this.btn_pagina_descuentos.Text = "Descuentos";
-            this.btn_pagina_descuentos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_pagina_descuentos.UseVisualStyleBackColor = true;
             this.btn_pagina_descuentos.Click += new System.EventHandler(this.btn_pagina_descuentos_Click);
             // 
@@ -199,12 +195,11 @@ namespace Proyecto_fina
             this.btn_pagina_departamentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_pagina_departamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_pagina_departamentos.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_pagina_departamentos.Location = new System.Drawing.Point(13, 30);
+            this.btn_pagina_departamentos.Location = new System.Drawing.Point(0, 30);
             this.btn_pagina_departamentos.Name = "btn_pagina_departamentos";
-            this.btn_pagina_departamentos.Size = new System.Drawing.Size(175, 30);
+            this.btn_pagina_departamentos.Size = new System.Drawing.Size(200, 42);
             this.btn_pagina_departamentos.TabIndex = 0;
             this.btn_pagina_departamentos.Text = "Departamentos";
-            this.btn_pagina_departamentos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_pagina_departamentos.UseVisualStyleBackColor = true;
             this.btn_pagina_departamentos.Click += new System.EventHandler(this.btn_pagina_departamentos_Click_1);
             // 

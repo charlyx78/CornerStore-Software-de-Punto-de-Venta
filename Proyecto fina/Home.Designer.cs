@@ -35,6 +35,7 @@ namespace Proyecto_fina
             this.lbl_nombre_cajero = new System.Windows.Forms.Label();
             this.lbl_fecha = new System.Windows.Forms.Label();
             this.lbl_hora = new System.Windows.Forms.Label();
+            this.lbl_caja = new System.Windows.Forms.Label();
             this.btn_restaurar = new System.Windows.Forms.PictureBox();
             this.btn_minimizar = new System.Windows.Forms.PictureBox();
             this.btn_cerrar = new System.Windows.Forms.PictureBox();
@@ -46,7 +47,6 @@ namespace Proyecto_fina
             this.label1 = new System.Windows.Forms.Label();
             this.panel_titulo = new System.Windows.Forms.Panel();
             this.btn_maximizar = new System.Windows.Forms.PictureBox();
-            this.lbl_caja = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_restaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_minimizar)).BeginInit();
@@ -109,6 +109,18 @@ namespace Proyecto_fina
             this.lbl_hora.TabIndex = 7;
             this.lbl_hora.Text = "label2";
             this.lbl_hora.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbl_caja
+            // 
+            this.lbl_caja.AutoSize = true;
+            this.lbl_caja.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_caja.ForeColor = System.Drawing.Color.White;
+            this.lbl_caja.Location = new System.Drawing.Point(426, 0);
+            this.lbl_caja.Name = "lbl_caja";
+            this.lbl_caja.Size = new System.Drawing.Size(45, 16);
+            this.lbl_caja.TabIndex = 8;
+            this.lbl_caja.Text = "label2";
+            this.lbl_caja.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btn_restaurar
             // 
@@ -181,12 +193,11 @@ namespace Proyecto_fina
             this.btn_pagina_devolucion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_pagina_devolucion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_pagina_devolucion.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_pagina_devolucion.Location = new System.Drawing.Point(12, 86);
+            this.btn_pagina_devolucion.Location = new System.Drawing.Point(0, 86);
             this.btn_pagina_devolucion.Name = "btn_pagina_devolucion";
-            this.btn_pagina_devolucion.Size = new System.Drawing.Size(173, 30);
+            this.btn_pagina_devolucion.Size = new System.Drawing.Size(200, 42);
             this.btn_pagina_devolucion.TabIndex = 2;
             this.btn_pagina_devolucion.Text = "Devolución";
-            this.btn_pagina_devolucion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_pagina_devolucion.UseVisualStyleBackColor = true;
             this.btn_pagina_devolucion.Click += new System.EventHandler(this.btn_pagina_devolucion_Click);
             // 
@@ -215,12 +226,11 @@ namespace Proyecto_fina
             this.btn_pagina_vender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_pagina_vender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_pagina_vender.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_pagina_vender.Location = new System.Drawing.Point(12, 30);
+            this.btn_pagina_vender.Location = new System.Drawing.Point(0, 30);
             this.btn_pagina_vender.Name = "btn_pagina_vender";
-            this.btn_pagina_vender.Size = new System.Drawing.Size(173, 30);
+            this.btn_pagina_vender.Size = new System.Drawing.Size(200, 42);
             this.btn_pagina_vender.TabIndex = 0;
             this.btn_pagina_vender.Text = "Vender";
-            this.btn_pagina_vender.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_pagina_vender.UseVisualStyleBackColor = true;
             this.btn_pagina_vender.Click += new System.EventHandler(this.btn_pagina_vender_Click);
             // 
@@ -263,18 +273,6 @@ namespace Proyecto_fina
             this.btn_maximizar.TabIndex = 2;
             this.btn_maximizar.TabStop = false;
             this.btn_maximizar.Click += new System.EventHandler(this.btn_maximizar_Click_1);
-            // 
-            // lbl_caja
-            // 
-            this.lbl_caja.AutoSize = true;
-            this.lbl_caja.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_caja.ForeColor = System.Drawing.Color.White;
-            this.lbl_caja.Location = new System.Drawing.Point(426, 0);
-            this.lbl_caja.Name = "lbl_caja";
-            this.lbl_caja.Size = new System.Drawing.Size(45, 16);
-            this.lbl_caja.TabIndex = 8;
-            this.lbl_caja.Text = "label2";
-            this.lbl_caja.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Home
             // 

@@ -83,6 +83,16 @@ namespace Proyecto_fina.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_devolución_de_compra_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-devolución-de-compra-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_dinero_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-dinero-30", resourceCulture);
@@ -136,6 +146,26 @@ namespace Proyecto_fina.Properties {
         internal static System.Drawing.Bitmap icons8_residuos_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-residuos-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_ver_archivo_30_1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-ver-archivo-30(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_ver_archivo_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-ver-archivo-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -60,6 +60,14 @@ namespace Proyecto_fina
             {
                 MessageBox.Show("Llene todos los campos para registrar un nuevo producto", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+            else if(txt_punto_reorden_producto.Value>txt_existencia_producto.Value)
+            {
+                MessageBox.Show("El punto de reorden ingresado es mayor al número de existencias ingresado", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if(txt_costo_producto.Value>txt_precio_unitario_producto.Value)
+            {
+                MessageBox.Show("El costo ingresdo es mayor al precio ingresado", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
             else if (lbl_id_producto.Text=="")
             {
                 try

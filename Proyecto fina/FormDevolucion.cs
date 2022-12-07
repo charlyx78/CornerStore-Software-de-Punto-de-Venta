@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace Proyecto_fina
 {
+
     public partial class FormDevolucion : Form
     {
         int id_usuario_rol_pagina = 0;
@@ -31,7 +32,7 @@ namespace Proyecto_fina
             try
             {
                 Conexion con = new Conexion();
-                SqlCommand cmd = new SqlCommand("SP_GET_CARRITO_TICKET", con.conectar());
+                SqlCommand cmd = new SqlCommand("SP_GET_CARRITO_TICKET_PARA_DEVOLUCION", con.conectar());
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("id_ticket", txt_codigo_ticket.Value);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -45,128 +46,223 @@ namespace Proyecto_fina
 
             }
         }
-
-        private void btn_buscar_producto_Click(object sender, EventArgs e)
+        private void btn_buscar_ticket_Click(object sender, EventArgs e)
         {
             cargarTicket();
+            txt_codigo_ticket.Enabled = false;
         }
-
-        private void btn_devolucion_Click(object sender, EventArgs e)
+        private void btn_devolucion_Click_1(object sender, EventArgs e)
         {
             crearDevolucion();
         }
         private void crearDevolucion()
         {
-            if((double)txt_cantidad_devolucion.Value > (int)dg_devolucion.Rows[dg_devolucion.CurrentRow.Index].Cells[5].Value)
+            try
             {
-                MessageBox.Show("No se pueden devolver más productos de los que se compraron", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            if (txt_cantidad_devolucion.Value>0 && cb_motivo_devolucion.SelectedIndex>=0 && dg_devolucion.SelectedRows.Count > 0)
-            {
-                try
+                Conexion con2 = new Conexion();
+                SqlCommand cmd2 = new SqlCommand("SP_CREAR_DEVOLUCION", con2.conectar());
+                cmd2.CommandType = CommandType.StoredProcedure;
+                double subtotal = (double)txt_subtotal_devolucion.Value;
+                cmd2.Parameters.AddWithValue("@subtotal_devolucion", subtotal);
+                cmd2.Parameters.AddWithValue("@total_devolucion", (double)txt_total_devolucion.Value);
+                cmd2.Parameters.AddWithValue("@id_cajero", id_usuario_rol_pagina);
+                cmd2.Parameters.AddWithValue("@id_caja", caja_activa);
+                cmd2.ExecuteNonQuery();
+
+                Conexion con3 = new Conexion();
+                SqlCommand cmd3 = new SqlCommand("SP_GET_ULTIMO_ID_DEVOLUCION", con3.conectar());
+                cmd3.CommandType = CommandType.StoredProcedure;
+                int ultimo_id = Convert.ToInt32(cmd3.ExecuteScalar());
+
+                foreach (DataGridViewRow row in dg_carrito_devolucion.Rows)
                 {
-                    Conexion con = new Conexion();
-                    SqlCommand cmd = new SqlCommand("SP_DEVOLUCION", con.conectar());
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@productos_devueltos", txt_cantidad_devolucion.Value);
-                    cmd.Parameters.AddWithValue("@id_producto", dg_devolucion.Rows[dg_devolucion.CurrentRow.Index].Cells[0].Value);
-                    cmd.ExecuteNonQuery();
-
-                    Conexion con2 = new Conexion();
-                    SqlCommand cmd2 = new SqlCommand("SP_CREAR_DEVOLUCION", con2.conectar());
-                    cmd2.CommandType = CommandType.StoredProcedure;
-                    double subtotal = (double)dg_devolucion.Rows[dg_devolucion.CurrentRow.Index].Cells[5].Value * (double)txt_cantidad_devolucion.Value;
-                    cmd2.Parameters.AddWithValue("@subtotal_devolucion", subtotal);
-                    double total_descuento = Math.Round(((double)subtotal * ((double)((int)dg_devolucion.Rows[dg_devolucion.CurrentRow.Index].Cells[5].Value / 100) / 100)), 2);
-                    cmd2.Parameters.AddWithValue("@total_devolucion", (double)(subtotal - (total_descuento)) * 1.16f);
-                    cmd2.Parameters.AddWithValue("@id_cajero", id_usuario_rol_pagina);
-                    cmd2.Parameters.AddWithValue("@id_caja", caja_activa);
-                    cmd2.ExecuteNonQuery();
-
-                    Conexion con3 = new Conexion();
-                    SqlCommand cmd3 = new SqlCommand("SP_GET_ULTIMO_ID_DEVOLUCION", con3.conectar());
-                    cmd3.CommandType = CommandType.StoredProcedure;
-                    int ultimo_id = Convert.ToInt32(cmd3.ExecuteScalar());
-
+                    //---CARRITO DE DEVOLUCION---//
                     Conexion con4 = new Conexion();
                     SqlCommand cmd4 = new SqlCommand("SP_AGREGAR_CARRITO_DEVOLUCION", con4.conectar());
                     cmd4.CommandType = CommandType.StoredProcedure;
                     cmd4.Parameters.AddWithValue("@id_detalles_devolucion", ultimo_id);
-                    cmd4.Parameters.AddWithValue("@id_producto", dg_devolucion.Rows[dg_devolucion.CurrentRow.Index].Cells[1].Value);
-                    cmd4.Parameters.AddWithValue("@cantidad", (double)txt_cantidad_devolucion.Value);
-                    cmd4.Parameters.AddWithValue("@precio", (double)dg_devolucion.Rows[dg_devolucion.CurrentRow.Index].Cells[5].Value);
-                    cmd4.Parameters.AddWithValue("@cantidad_descuento", (int)dg_devolucion.Rows[dg_devolucion.CurrentRow.Index].Cells[6].Value);
+                    cmd4.Parameters.AddWithValue("@id_producto", row.Cells[0].Value);
+                    cmd4.Parameters.AddWithValue("@cantidad", (float)row.Cells[1].Value);
+                    cmd4.Parameters.AddWithValue("@precio", (double)row.Cells[2].Value);
+                    cmd4.Parameters.AddWithValue("@cantidad_descuento", (int)row.Cells[3].Value);
                     cmd4.Parameters.AddWithValue("@subtotal", subtotal);
-                    cmd4.Parameters.AddWithValue("@total", (double)(subtotal - (total_descuento)) * 1.16f);
+                    cmd4.Parameters.AddWithValue("@total", (double)(subtotal - (subtotal * ((int)row.Cells[3].Value/100))));
                     cmd4.Parameters.AddWithValue("@motivo_devolucion", cb_motivo_devolucion.Text);
                     cmd4.ExecuteNonQuery();
 
-                    if (cb_motivo_devolucion.Text != "Deficiencia de producto")
+                    //---DESCONTAR DE INVENTARIO---//
+                    if (row.Cells[6].Value.ToString() != "Deficiencia de producto")
                     {
                         Conexion con5 = new Conexion();
                         SqlCommand cmd5 = new SqlCommand("SP_DEVOLVER_A_INVENTARIO", con5.conectar());
                         cmd5.CommandType = CommandType.StoredProcedure;
-                        cmd5.Parameters.AddWithValue("@productos_devueltos", txt_cantidad_devolucion.Value);
-                        cmd5.Parameters.AddWithValue("@id_producto", dg_devolucion.Rows[dg_devolucion.CurrentRow.Index].Cells[0].Value);
+                        cmd5.Parameters.AddWithValue("@productos_devueltos", (float)row.Cells[1].Value);
+                        cmd5.Parameters.AddWithValue("@id_producto", (int)row.Cells[0].Value);
                         cmd5.ExecuteNonQuery();
                     }
-
-
-                    Utilidades.CreaTicket ticket = new Utilidades.CreaTicket();
-                    ticket.TextoCentro("CORNERSTORE");
-                    ticket.TextoCentro("--------------------------------------------------");
-
-                    ticket.TextoIzquierda("");
-                    ticket.TextoCentro("Nota de credito");
-                    ticket.TextoIzquierda("No. de nota de credito: " + ultimo_id);
-                    ticket.TextoIzquierda("Fecha: " + DateTime.Now.ToString());
-                    ticket.TextoIzquierda("Caja: " + caja_activa);
-                    ticket.TextoIzquierda("Le atendió: " + Utilidades.getNombreUsuario(id_usuario_rol_pagina));
-                    ticket.TextoIzquierda("");
-                    Utilidades.CreaTicket.LineasGuion();
-                    Utilidades.CreaTicket.EncabezadoVenta();
-                    Utilidades.CreaTicket.LineasGuion();
-
-                    string nombre_producto = dg_devolucion.Rows[dg_devolucion.CurrentRow.Index].Cells[2].Value.ToString();
-                    ticket.AgregaArticulo(nombre_producto,
-                                          (double)dg_devolucion.Rows[dg_devolucion.CurrentRow.Index].Cells[5].Value,
-                                          (int)txt_cantidad_devolucion.Value,
-                                          Math.Round(subtotal, 2),
-                                          (int)dg_devolucion.Rows[dg_devolucion.CurrentRow.Index].Cells[6].Value);
-
-                    Utilidades.CreaTicket.LineasGuion();
-
-                    ticket.TextoIzquierda("Motivo: " + cb_motivo_devolucion.Text);
-
-                    Utilidades.CreaTicket.LineasGuion();
-
-                    ticket.AgregaTotales("Subtotal: ", (double)subtotal);
-                    ticket.AgregaTotales("IVA: ", (double)subtotal*0.16);
-                    ticket.AgregaTotales("Descuento: ", Math.Round(((double)subtotal * ((double)((int)dg_devolucion.Rows[dg_devolucion.CurrentRow.Index].Cells[6].Value / 100) / 100)), 2));
-                    ticket.AgregaTotales("Total: ", Math.Round((double)(subtotal - (total_descuento)) * 1.16f, 2));
-
-                    ticket.TextoIzquierda("");
-                    ticket.TextoCentro("--------------------------------------------------");
-                    ticket.TextoCentro("--------  Lamentamos el inconveniente :(  --------");
-                    ticket.TextoCentro("--------------------------------------------------");
-                    ticket.TextoIzquierda("");
-
-                    ticket.ImprimirTiket("Microsoft Print to PDF");
-
-                    dg_devolucion.Rows.Clear();
-                    txt_cantidad_devolucion.Value = 0;
-                    txt_codigo_ticket.Value = 0;
                 }
-                catch (Exception ex)
+
+                Utilidades.CreaTicket ticket = new Utilidades.CreaTicket();
+                ticket.TextoCentro("CORNERSTORE");
+                ticket.TextoCentro("--------------------------------------------------");
+
+                ticket.TextoIzquierda("");
+                ticket.TextoCentro("Nota de credito");
+                ticket.TextoCentro("No. de nota de credito: " + ultimo_id);
+                ticket.TextoCentro("Fecha: " + DateTime.Now.ToString());
+                ticket.TextoCentro("Caja: " + caja_activa);
+                ticket.TextoCentro("Le atendió: " + Utilidades.getNombreUsuario(id_usuario_rol_pagina));
+                ticket.TextoCentro("");
+                Utilidades.CreaTicket.LineasGuion();
+                Utilidades.CreaTicket.EncabezadoVenta();
+                Utilidades.CreaTicket.LineasGuion();
+
+                foreach(DataGridViewRow row in dg_carrito_devolucion.Rows)
                 {
-                    MessageBox.Show(ex.Message, "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    string nombre_producto = "";
+                    Conexion con4 = new Conexion();
+                    SqlCommand cmd4 = new SqlCommand("SP_GET_NOMBRE_PRODUCTO", con4.conectar());
+                    cmd4.CommandType = CommandType.StoredProcedure;
+                    cmd4.Parameters.AddWithValue("@id_producto", row.Cells[0].Value);
+                    SqlDataReader rd4 = cmd4.ExecuteReader();
+                    if(rd4.HasRows)
+                    {
+                        rd4.Read();
+                        nombre_producto = rd4.GetString(0);
+                    }
+                    ticket.AgregaArticulo(nombre_producto,
+                                            (double)row.Cells[2].Value,
+                                            (float)row.Cells[1].Value,
+                                            (double)row.Cells[4].Value,
+                                            (int)row.Cells[3].Value);
                 }
 
+                Utilidades.CreaTicket.LineasGuion();
+
+                //ticket.TextoIzquierda("Motivo: " + cb_motivo_devolucion.Text);
+
+                Utilidades.CreaTicket.LineasGuion();
+
+                ticket.AgregaTotales("Subtotal: ", (double)txt_subtotal_devolucion.Value);
+                //ticket.AgregaTotales("IVA: ", (double)subtotal * 0.16);
+                //ticket.AgregaTotales("Descuento: ", Math.Round(((double)subtotal * ((double)((int)dg_devolucion.Rows[dg_devolucion.CurrentRow.Index].Cells[7].Value / 100) / 100)), 2));
+                ticket.AgregaTotales("Total: ", (double)txt_total_devolucion.Value);
+
+                ticket.TextoIzquierda("");
+                ticket.TextoCentro("--------------------------------------------------");
+                ticket.TextoCentro("--------  Lamentamos el inconveniente :(  --------");
+                ticket.TextoCentro("--------------------------------------------------");
+                ticket.TextoIzquierda("");
+
+                ticket.ImprimirTiket("Microsoft Print to PDF");
+
+                //dg_devolucion.DataSource = null;
+                //dg_devolucion.Rows.Clear();
+                //txt_producto_devolucion.Text = "";
+                //cb_motivo_devolucion.SelectedIndex = -1;
+                //txt_cantidad_devolucion.Value = 0;
+                //txt_codigo_ticket.Value = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dg_devolucion_SelectionChanged(object sender, EventArgs e)
+        {
+            txt_producto_devolucion.Text = dg_devolucion.CurrentRow.Cells[1].Value.ToString();
+        }
+        private void btn_agregar_producto_Click(object sender, EventArgs e)
+        {
+            if (txt_cantidad_devolucion.Value != 0 && cb_motivo_devolucion.SelectedIndex != -1)
+            {
+                if ((float)txt_cantidad_devolucion.Value <= (int)dg_devolucion.CurrentRow.Cells[2].Value)
+                {
+                    try
+                    {
+                        if (dg_carrito_devolucion.RowCount == 0)
+                        {
+                            int id = (int)dg_devolucion.CurrentRow.Cells[0].Value;
+
+                            Conexion con = new Conexion();
+                            SqlCommand cmd = new SqlCommand("SP_GET_PRODUCTO_DEVOLUCION", con.conectar());
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@id_ticket", txt_codigo_ticket.Value);
+                            cmd.Parameters.AddWithValue("@id_producto", id);
+                            SqlDataAdapter da = new SqlDataAdapter(cmd);
+                            DataTable dt = new DataTable();
+                            da.Fill(dt);
+
+                            float cantidad = (float)txt_cantidad_devolucion.Value;
+                            double precio = (double)dt.Rows[0][2];
+                            int descuento = (int)dt.Rows[0][3];
+                            double subtotal = cantidad * precio;
+                            double total = subtotal - (subtotal * (descuento / 100));
+                            string motivo_devolucion = cb_motivo_devolucion.Text;
+                            dg_carrito_devolucion.Rows.Add(id, cantidad, precio, descuento, subtotal, total, motivo_devolucion);
+                        }
+                        else
+                        {
+                            int id = (int)dg_devolucion.CurrentRow.Cells[0].Value;
+                            float sumaCantidadEnCarrito = 0;
+                            foreach (DataGridViewRow row in dg_carrito_devolucion.Rows)
+                            {
+                                if ((int)row.Cells[0].Value == id)
+                                {
+                                    sumaCantidadEnCarrito += (float)row.Cells[1].Value;
+                                }
+                            }
+                            float cantidadADevolver = sumaCantidadEnCarrito + (float)txt_cantidad_devolucion.Value;
+                            if ((int)dg_devolucion.CurrentRow.Cells[2].Value >= cantidadADevolver)
+                            {
+                                Conexion con = new Conexion();
+                                SqlCommand cmd = new SqlCommand("SP_GET_PRODUCTO_DEVOLUCION", con.conectar());
+                                cmd.CommandType = CommandType.StoredProcedure;
+                                cmd.Parameters.AddWithValue("@id_ticket", txt_codigo_ticket.Value);
+                                cmd.Parameters.AddWithValue("@id_producto", id);
+                                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                                DataTable dt = new DataTable();
+                                da.Fill(dt);
+
+                                float cantidad = (float)txt_cantidad_devolucion.Value;
+                                double precio = (double)dt.Rows[0][2];
+                                int descuento = (int)dt.Rows[0][3];
+                                double subtotal = cantidad * precio;
+                                double total = subtotal - (subtotal * (descuento / 100));
+                                string motivo_devolucion = cb_motivo_devolucion.Text;
+                                dg_carrito_devolucion.Rows.Add(id, cantidad, precio, descuento, subtotal, total, motivo_devolucion);
+                            }
+                            else
+                            {
+                                MessageBox.Show("No pueden devolver más productos de los comprados", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("No pueden devolver más productos de los comprados", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show("Seleccione todos los datos para completar la devolución", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Seleccione una cantidad de productos a devolver y un motivo de devolución válidos", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            double subtotal_carrito = 0;
+            double total_carrito = 0;
+            foreach (DataGridViewRow row in dg_carrito_devolucion.Rows)
+            {
+                subtotal_carrito += (float)row.Cells[1].Value * (double)row.Cells[2].Value;
+                total_carrito += ((float)row.Cells[1].Value * (double)row.Cells[2].Value) - ((float)row.Cells[1].Value * (double)row.Cells[2].Value) * ((int)row.Cells[3].Value);
+            }
+            txt_subtotal_devolucion.Value = (decimal)(double)subtotal_carrito;
+            txt_total_devolucion.Value = (decimal)(double)total_carrito;
         }
     }
 }

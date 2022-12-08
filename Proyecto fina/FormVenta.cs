@@ -28,10 +28,10 @@ namespace Proyecto_fina
         private void btn_nuevo_producto_Click(object sender, EventArgs e)
         {
             int id_producto = (int)txt_codigo_producto_carrito.Value;
-            float stock_temp = (float)getCantidadInventario(id_producto);
+            double stock_temp = (double)getCantidadInventario(id_producto);
             if (txt_cantidad_producto_carrito.Value > 0)
             {
-                if ((float)getCantidadInventario((int)txt_codigo_producto_carrito.Value) >= (float)txt_cantidad_producto_carrito.Value)
+                if ((double)getCantidadInventario((int)txt_codigo_producto_carrito.Value) >= (double)txt_cantidad_producto_carrito.Value)
                 {
                     try
                     {
@@ -43,14 +43,14 @@ namespace Proyecto_fina
                                 {
                                     if (id_producto == Convert.ToInt32(dg_carrito.Rows[i].Cells[1].Value))
                                     {
-                                        stock_temp -= (float)dg_carrito.Rows[i].Cells[3].Value;
-                                        if ((float)txt_cantidad_producto_carrito.Value > stock_temp)
+                                        stock_temp -= (double)dg_carrito.Rows[i].Cells[3].Value;
+                                        if ((double)txt_cantidad_producto_carrito.Value > stock_temp)
                                         {
                                             MessageBox.Show("No hay suficientes productos en el inventario", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                         }
                                         else
                                         {
-                                            float cantidad = (float)dg_carrito.Rows[i].Cells[3].Value + (float)txt_cantidad_producto_carrito.Value;
+                                            double cantidad = (double)dg_carrito.Rows[i].Cells[3].Value + (double)txt_cantidad_producto_carrito.Value;
                                             int descuento = (int)dg_carrito.Rows[i].Cells[6].Value;
                                             double precio = (double)dg_carrito.Rows[i].Cells[5].Value;
                                             double subtotal = cantidad * precio;
@@ -67,7 +67,7 @@ namespace Proyecto_fina
                             else
                             {
                                 string nombre = "";
-                                float cantidad = 0;
+                                double cantidad = 0;
                                 double precio = 0;
                                 string um = "";
                                 int descuento = 0;
@@ -86,7 +86,7 @@ namespace Proyecto_fina
                                 {
                                     id_producto = (int)dt.Rows[0][0];
                                     nombre = (string)dt.Rows[0][1];
-                                    cantidad = (float)txt_cantidad_producto_carrito.Value;
+                                    cantidad = (double)txt_cantidad_producto_carrito.Value;
                                     um = (string)dt.Rows[0][2];
                                     precio = (double)dt.Rows[0][4];
                                     descuento = validarDescuento(id_producto);
@@ -176,9 +176,9 @@ namespace Proyecto_fina
             frm.ShowDialog();
 
         }
-        public float getCantidadInventario(int id_producto)
+        public double getCantidadInventario(int id_producto)
         {
-            float cantidad = 0;
+            double cantidad = 0;
             Conexion con = new Conexion();
             SqlCommand cmd = new SqlCommand("SP_GET_CANTIDAD_INVENTARIO", con.conectar());
             cmd.CommandType = CommandType.StoredProcedure;
@@ -231,12 +231,12 @@ namespace Proyecto_fina
 
         private void button1_Click(object sender, EventArgs e)
         {
-            float precio = getPrecioProducto((int)txt_codigo_producto_carrito.Value) * (float)txt_cantidad_producto_carrito.Value;
+            double precio = getPrecioProducto((int)txt_codigo_producto_carrito.Value) * (double)txt_cantidad_producto_carrito.Value;
             MessageBox.Show("$" + precio, "PRECIO", MessageBoxButtons.OK);
         }
-        public int getPrecioProducto(int id_producto)
+        public double getPrecioProducto(int id_producto)
         {
-            int cantidad = 0;
+            double cantidad = 0;
             Conexion con = new Conexion();
             SqlCommand cmd = new SqlCommand("SP_BUSCAR_PRECIO", con.conectar());
             cmd.CommandType = CommandType.StoredProcedure;

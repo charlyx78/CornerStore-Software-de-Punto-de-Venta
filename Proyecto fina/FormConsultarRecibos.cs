@@ -100,7 +100,7 @@ namespace Proyecto_fina
 
             foreach (DataGridViewRow row in dg_consulta.Rows)
             {
-                ticket.AgregaArticulo((string)row.Cells[3].Value.ToString(), (double)row.Cells[6].Value, (int)row.Cells[5].Value, (double)row.Cells[8].Value, (int)row.Cells[7].Value);
+                ticket.AgregaArticulo((string)row.Cells[3].Value.ToString(), (double)row.Cells[6].Value, (double)row.Cells[5].Value, (double)row.Cells[8].Value, (int)row.Cells[7].Value);
             }
             Utilidades.CreaTicket.LineasGuion();
             ticket.AgregaTotales("Subtotal: ", (double)dg_consulta.CurrentRow.Cells[10].Value);
@@ -140,13 +140,13 @@ namespace Proyecto_fina
             string nombre_producto = dg_consulta.CurrentRow.Cells[3].Value.ToString();
             ticket.AgregaArticulo(nombre_producto,
                                   (double)dg_consulta.CurrentRow.Cells[6].Value,
-                                  (int)dg_consulta.CurrentRow.Cells[5].Value,
+                                  (double)dg_consulta.CurrentRow.Cells[5].Value,
                                   Math.Round((double)dg_consulta.CurrentRow.Cells[8].Value, 2),
                                   (int)dg_consulta.CurrentRow.Cells[7].Value);
 
             Utilidades.CreaTicket.LineasGuion();
 
-            ticket.TextoIzquierda("Motivo: " + dg_consulta.CurrentRow.Cells[10].Value.ToString());
+            //ticket.TextoIzquierda("Motivo: " + dg_consulta.CurrentRow.Cells[10].Value.ToString());
 
             Utilidades.CreaTicket.LineasGuion();
 

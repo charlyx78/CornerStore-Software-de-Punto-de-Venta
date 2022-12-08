@@ -34,8 +34,9 @@ namespace Proyecto_fina
             this.panel_contenedor = new System.Windows.Forms.Panel();
             this.panel_formularios = new System.Windows.Forms.Panel();
             this.panel_menu = new System.Windows.Forms.Panel();
+            this.btn_pagina_reporte_ventas = new System.Windows.Forms.Button();
             this.btn_consulta = new System.Windows.Forms.Button();
-            this.btn_pagina_reportes_ventas = new System.Windows.Forms.Button();
+            this.btn_pagina_reporte_inventario = new System.Windows.Forms.Button();
             this.btn_pagina_productos = new System.Windows.Forms.Button();
             this.btn_pagina_descuentos = new System.Windows.Forms.Button();
             this.btn_cerrar_sesion = new System.Windows.Forms.Button();
@@ -50,6 +51,8 @@ namespace Proyecto_fina
             this.btn_minimizar = new System.Windows.Forms.PictureBox();
             this.btn_maximizar = new System.Windows.Forms.PictureBox();
             this.btn_cerrar = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel_contenedor.SuspendLayout();
             this.panel_menu.SuspendLayout();
             this.panel_titulo.SuspendLayout();
@@ -90,8 +93,11 @@ namespace Proyecto_fina
             // panel_menu
             // 
             this.panel_menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(12)))), ((int)(((byte)(13)))));
+            this.panel_menu.Controls.Add(this.button2);
+            this.panel_menu.Controls.Add(this.button1);
+            this.panel_menu.Controls.Add(this.btn_pagina_reporte_ventas);
             this.panel_menu.Controls.Add(this.btn_consulta);
-            this.panel_menu.Controls.Add(this.btn_pagina_reportes_ventas);
+            this.panel_menu.Controls.Add(this.btn_pagina_reporte_inventario);
             this.panel_menu.Controls.Add(this.btn_pagina_productos);
             this.panel_menu.Controls.Add(this.btn_pagina_descuentos);
             this.panel_menu.Controls.Add(this.btn_cerrar_sesion);
@@ -102,6 +108,23 @@ namespace Proyecto_fina
             this.panel_menu.Size = new System.Drawing.Size(200, 680);
             this.panel_menu.TabIndex = 1;
             // 
+            // btn_pagina_reporte_ventas
+            // 
+            this.btn_pagina_reporte_ventas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_pagina_reporte_ventas.FlatAppearance.BorderSize = 0;
+            this.btn_pagina_reporte_ventas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(208)))), ((int)(((byte)(217)))));
+            this.btn_pagina_reporte_ventas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(157)))), ((int)(((byte)(166)))));
+            this.btn_pagina_reporte_ventas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_pagina_reporte_ventas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_pagina_reporte_ventas.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btn_pagina_reporte_ventas.Location = new System.Drawing.Point(0, 261);
+            this.btn_pagina_reporte_ventas.Name = "btn_pagina_reporte_ventas";
+            this.btn_pagina_reporte_ventas.Size = new System.Drawing.Size(200, 42);
+            this.btn_pagina_reporte_ventas.TabIndex = 6;
+            this.btn_pagina_reporte_ventas.Text = "Ventas";
+            this.btn_pagina_reporte_ventas.UseVisualStyleBackColor = true;
+            this.btn_pagina_reporte_ventas.Click += new System.EventHandler(this.btn_pagina_reporte_ventas_Click);
+            // 
             // btn_consulta
             // 
             this.btn_consulta.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -111,7 +134,7 @@ namespace Proyecto_fina
             this.btn_consulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_consulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_consulta.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_consulta.Location = new System.Drawing.Point(0, 255);
+            this.btn_consulta.Location = new System.Drawing.Point(0, 324);
             this.btn_consulta.Name = "btn_consulta";
             this.btn_consulta.Size = new System.Drawing.Size(200, 42);
             this.btn_consulta.TabIndex = 5;
@@ -119,22 +142,22 @@ namespace Proyecto_fina
             this.btn_consulta.UseVisualStyleBackColor = true;
             this.btn_consulta.Click += new System.EventHandler(this.btn_consulta_Click);
             // 
-            // btn_pagina_reportes_ventas
+            // btn_pagina_reporte_inventario
             // 
-            this.btn_pagina_reportes_ventas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_pagina_reportes_ventas.FlatAppearance.BorderSize = 0;
-            this.btn_pagina_reportes_ventas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(208)))), ((int)(((byte)(217)))));
-            this.btn_pagina_reportes_ventas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(157)))), ((int)(((byte)(166)))));
-            this.btn_pagina_reportes_ventas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_pagina_reportes_ventas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_pagina_reportes_ventas.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_pagina_reportes_ventas.Location = new System.Drawing.Point(0, 198);
-            this.btn_pagina_reportes_ventas.Name = "btn_pagina_reportes_ventas";
-            this.btn_pagina_reportes_ventas.Size = new System.Drawing.Size(200, 42);
-            this.btn_pagina_reportes_ventas.TabIndex = 4;
-            this.btn_pagina_reportes_ventas.Text = "Inventario";
-            this.btn_pagina_reportes_ventas.UseVisualStyleBackColor = true;
-            this.btn_pagina_reportes_ventas.Click += new System.EventHandler(this.btn_pagina_reportes_ventas_Click);
+            this.btn_pagina_reporte_inventario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_pagina_reporte_inventario.FlatAppearance.BorderSize = 0;
+            this.btn_pagina_reporte_inventario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(208)))), ((int)(((byte)(217)))));
+            this.btn_pagina_reporte_inventario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(157)))), ((int)(((byte)(166)))));
+            this.btn_pagina_reporte_inventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_pagina_reporte_inventario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_pagina_reporte_inventario.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btn_pagina_reporte_inventario.Location = new System.Drawing.Point(0, 198);
+            this.btn_pagina_reporte_inventario.Name = "btn_pagina_reporte_inventario";
+            this.btn_pagina_reporte_inventario.Size = new System.Drawing.Size(200, 42);
+            this.btn_pagina_reporte_inventario.TabIndex = 4;
+            this.btn_pagina_reporte_inventario.Text = "Inventario";
+            this.btn_pagina_reporte_inventario.UseVisualStyleBackColor = true;
+            this.btn_pagina_reporte_inventario.Click += new System.EventHandler(this.btn_pagina_reportes_ventas_Click);
             // 
             // btn_pagina_productos
             // 
@@ -332,6 +355,38 @@ namespace Proyecto_fina
             this.btn_cerrar.TabStop = false;
             this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
             // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(208)))), ((int)(((byte)(217)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(157)))), ((int)(((byte)(166)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.button1.Location = new System.Drawing.Point(0, 319);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(200, 42);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Consultar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(208)))), ((int)(((byte)(217)))));
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(157)))), ((int)(((byte)(166)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.button2.Location = new System.Drawing.Point(0, 382);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(200, 42);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Reporte de cajeros";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // HomeAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -376,7 +431,10 @@ namespace Proyecto_fina
         private System.Windows.Forms.Label lbl_fecha;
         private System.Windows.Forms.Label lbl_hora;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button btn_pagina_reportes_ventas;
+        private System.Windows.Forms.Button btn_pagina_reporte_inventario;
         private System.Windows.Forms.Button btn_consulta;
+        private System.Windows.Forms.Button btn_pagina_reporte_ventas;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

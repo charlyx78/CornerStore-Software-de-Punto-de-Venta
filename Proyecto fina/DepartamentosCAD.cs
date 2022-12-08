@@ -19,6 +19,7 @@ namespace Proyecto_fina
                 SqlCommand cmd = new SqlCommand("SP_CREAR_DEPARTAMENTO", con.conectar());
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@nombre_departamento", d.Nombre_departamento);
+                cmd.Parameters.AddWithValue("@permite_devoluciones", d.Permite_devoluciones);
                 cmd.Parameters.AddWithValue("@usuario_cambios", d.Id_usuario);
 
                 int cantidad = cmd.ExecuteNonQuery();
@@ -91,6 +92,7 @@ namespace Proyecto_fina
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_departamento", d.Id_departamento);
                 cmd.Parameters.AddWithValue("@nombre_departamento", d.Nuevo_nombre_departamento);
+                cmd.Parameters.AddWithValue("@permite_devoluciones", d.Nuevo_permite_devoluciones);
                 cmd.Parameters.AddWithValue("@usuario_cambios", d.Nuevo_id_usuario);
                 int cantidad = cmd.ExecuteNonQuery();
                 if (cantidad == 1)

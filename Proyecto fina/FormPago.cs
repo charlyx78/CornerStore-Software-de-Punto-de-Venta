@@ -152,7 +152,7 @@ namespace Proyecto_fina
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id_detalles_ticket", getUltimoIDDetallesTicket());
                     cmd.Parameters.AddWithValue("@id_producto", (int)carritoCompra.Rows[i].Cells[1].Value);
-                    cmd.Parameters.AddWithValue("@cantidad", (float)carritoCompra.Rows[i].Cells[3].Value);
+                    cmd.Parameters.AddWithValue("@cantidad", (double)carritoCompra.Rows[i].Cells[3].Value);
                     cmd.Parameters.AddWithValue("@precio", (double)carritoCompra.Rows[i].Cells[5].Value);
                     cmd.Parameters.AddWithValue("@cantidad_descuento", (int)carritoCompra.Rows[i].Cells[6].Value);
                     cmd.Parameters.AddWithValue("@subtotal", (double)carritoCompra.Rows[i].Cells[8].Value);
@@ -176,19 +176,19 @@ namespace Proyecto_fina
 
                 foreach(DataGridViewRow row in carritoCompra.Rows)
                 {
-                    ticket.AgregaArticulo((string)row.Cells[2].Value.ToString(),(double) row.Cells[5].Value, (float)row.Cells[3].Value, (double)row.Cells[8].Value, (int)row.Cells[6].Value);
+                    ticket.AgregaArticulo((string)row.Cells[2].Value.ToString(),(double) row.Cells[5].Value, (double)row.Cells[3].Value, (double)row.Cells[8].Value, (int)row.Cells[6].Value);
                 }
                 Utilidades.CreaTicket.LineasGuion();
-                ticket.AgregaTotales("Subtotal: ", (float)subtotalPago);
-                ticket.AgregaTotales("Descuento: ", (float)descuentoPago);
+                ticket.AgregaTotales("Subtotal: ", (double)subtotalPago);
+                ticket.AgregaTotales("Descuento: ", (double)descuentoPago);
                 ticket.AgregaTotales("IVA: ", (subtotalPago - descuentoPago) * 0.16);
                 ticket.AgregaTotales("Total: ", totalPago);
 
                 ticket.TextoIzquierda("");
 
-                ticket.AgregaTotales("Pago en efectivo: ", (float)txt_pago_efectivo.Value);
-                ticket.AgregaTotales("Pago en tarjeta: ", (float)txt_pago_tarjeta.Value);
-                ticket.AgregaTotales("Pago en vales: ", (float)txt_pago_vales.Value);
+                ticket.AgregaTotales("Pago en efectivo: ", (double)txt_pago_efectivo.Value);
+                ticket.AgregaTotales("Pago en tarjeta: ", (double)txt_pago_tarjeta.Value);
+                ticket.AgregaTotales("Pago en vales: ", (double)txt_pago_vales.Value);
                 ticket.AgregaTotales("Cambio de efectivo: ", Math.Round(cambio,2));
 
                 ticket.TextoIzquierda("");
@@ -215,7 +215,7 @@ namespace Proyecto_fina
                     Conexion con = new Conexion();
                     SqlCommand cmd = new SqlCommand("SP_DESCONTAR_PRODUCTO_INVENTARIO", con.conectar());
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@cantidad_compra", (float)carritoCompra.Rows[i].Cells[3].Value);
+                    cmd.Parameters.AddWithValue("@cantidad_compra", (double)carritoCompra.Rows[i].Cells[3].Value);
                     cmd.Parameters.AddWithValue("@id_producto", (int)carritoCompra.Rows[i].Cells[1].Value);
                     cmd.ExecuteNonQuery();
                 }

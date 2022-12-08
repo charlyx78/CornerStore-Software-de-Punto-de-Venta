@@ -168,7 +168,7 @@ namespace Proyecto_fina
             // 
             // img_tabla_vacia
             // 
-            this.img_tabla_vacia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
+            this.img_tabla_vacia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(63)))));
             this.img_tabla_vacia.Image = global::Proyecto_fina.Properties.Resources.nada_encontrado;
             this.img_tabla_vacia.Location = new System.Drawing.Point(413, 268);
             this.img_tabla_vacia.Name = "img_tabla_vacia";
@@ -180,7 +180,7 @@ namespace Proyecto_fina
             // lbl_tabla_vacia
             // 
             this.lbl_tabla_vacia.AutoSize = true;
-            this.lbl_tabla_vacia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
+            this.lbl_tabla_vacia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(63)))));
             this.lbl_tabla_vacia.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_tabla_vacia.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbl_tabla_vacia.Location = new System.Drawing.Point(161, 378);

@@ -52,6 +52,10 @@ namespace Proyecto_fina
         {
             AbrirFormularioHijo(new FormReporteInventario(this.getUsuarioID()));
         }
+        private void btn_pagina_reporte_ventas_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new FormReporteVentas(this.getUsuarioID()));
+        }
         private void btn_consulta_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new FormConsultarRecibos(this.getUsuarioID()));

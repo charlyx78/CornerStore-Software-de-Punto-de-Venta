@@ -34,6 +34,14 @@ namespace Proyecto_fina
                 try
                 {
                     dptos.Nombre_departamento = txt_nombre_departamento.Text.Trim().ToUpper();
+                    if (rb_permite_devoluciones.Checked)
+                    {
+                        dptos.Permite_devoluciones = 1;
+                    }
+                    else if (rb_no_permite_devoluciones.Checked)
+                    {
+                        dptos.Permite_devoluciones = 0;
+                    }
                     dptos.Id_usuario = id_usuario_rol_pagina;
                     if (!DepartamentosCAD.existeDepartamento(txt_nombre_departamento.Text.Trim()))
                     {
@@ -64,6 +72,14 @@ namespace Proyecto_fina
                 {
                     dptos.Id_departamento = Int32.Parse(lbl_id_departamento.Text);
                     dptos.Nuevo_nombre_departamento = txt_nombre_departamento.Text.Trim().ToUpper();
+                    if (rb_permite_devoluciones.Checked)
+                    {
+                        dptos.Nuevo_permite_devoluciones = 1;
+                    }
+                    else if (rb_no_permite_devoluciones.Checked)
+                    {
+                        dptos.Nuevo_permite_devoluciones = 0;
+                    }
                     dptos.Nuevo_id_usuario = id_usuario_rol_pagina;
                     if (DepartamentosCAD.actualizarDepartamento(dptos))
                     {

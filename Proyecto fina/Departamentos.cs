@@ -10,10 +10,12 @@ namespace Proyecto_fina
     {
         private int id_departamento;
         private string nombre_departamento;
+        private int permite_devoluciones;
         private int id_usuario;
         private string fecha;
 
         private string nuevo_nombre_departamento;
+        private int nuevo_permite_devoluciones;
         private int nuevo_id_usuario;
         private string nueva_fecha;
 
@@ -32,6 +34,8 @@ namespace Proyecto_fina
         public int Id_departamento { get => id_departamento; set => id_departamento = value; }
         public int Nuevo_id_usuario { get => nuevo_id_usuario; set => nuevo_id_usuario = value; }
         public string Nueva_fecha { get => nueva_fecha; set => nueva_fecha = value; }
+        public int Permite_devoluciones { get => permite_devoluciones; set => permite_devoluciones = value; }
+        public int Nuevo_permite_devoluciones { get => nuevo_permite_devoluciones; set => nuevo_permite_devoluciones = value; }
     }
 
 }

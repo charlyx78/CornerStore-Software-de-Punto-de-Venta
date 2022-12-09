@@ -63,7 +63,7 @@ namespace Proyecto_fina
             return nombreUsuario;
         }
 
-        public SqlDataReader getUsuarioCambio(string tabla, string columna, int id)
+        public static SqlDataReader getUsuarioCambio(string tabla, string columna, int id)
         {
             Conexion con = new Conexion();
             string usuario = "SELECT CONCAT(nombre, ' ', apellido_paterno, ' ', apellido_materno) FROM tb_usuario A INNER JOIN " + tabla + " B ON A.id_usuario=B.usuario_cambios WHERE " + columna + "= " + id + ";";
@@ -71,7 +71,7 @@ namespace Proyecto_fina
             SqlDataReader rd = comando.ExecuteReader();
             return rd;
         }
-        public SqlDataReader getFechaCambio(string tabla, string columna, int id)
+        public static SqlDataReader getFechaCambio(string tabla, string columna, int id)
         {
             Conexion con2 = new Conexion();
             string fecha = "SELECT fecha_cambios FROM " + tabla + " WHERE " + columna + "= " + id + ";";

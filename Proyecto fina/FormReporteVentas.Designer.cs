@@ -29,8 +29,8 @@ namespace Proyecto_fina
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -57,21 +57,25 @@ namespace Proyecto_fina
             this.descuento_venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.utilidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.img_tabla_vacia = new System.Windows.Forms.PictureBox();
             this.txt_suma_subtotal = new System.Windows.Forms.NumericUpDown();
             this.txt_suma_total_descuento = new System.Windows.Forms.NumericUpDown();
             this.txt_suma_total = new System.Windows.Forms.NumericUpDown();
             this.txt_suma_utilidad = new System.Windows.Forms.NumericUpDown();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.img_tabla_vacia = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_ventas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_tabla_vacia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_suma_subtotal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_suma_total_descuento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_suma_total)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_suma_utilidad)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_tabla_vacia)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -236,15 +240,15 @@ namespace Proyecto_fina
             this.dg_ventas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
             this.dg_ventas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dg_ventas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.NullValue = null;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_ventas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.NullValue = null;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_ventas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dg_ventas.ColumnHeadersHeight = 40;
             this.dg_ventas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dg_ventas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -269,13 +273,13 @@ namespace Proyecto_fina
             this.dg_ventas.RowHeadersVisible = false;
             this.dg_ventas.RowHeadersWidth = 80;
             this.dg_ventas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.NullValue = null;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(208)))), ((int)(((byte)(193)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            this.dg_ventas.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.NullValue = null;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(208)))), ((int)(((byte)(193)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            this.dg_ventas.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dg_ventas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dg_ventas.Size = new System.Drawing.Size(991, 457);
             this.dg_ventas.TabIndex = 113;
@@ -352,6 +356,96 @@ namespace Proyecto_fina
             this.utilidad.Name = "utilidad";
             this.utilidad.ReadOnly = true;
             // 
+            // txt_suma_subtotal
+            // 
+            this.txt_suma_subtotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_suma_subtotal.DecimalPlaces = 2;
+            this.txt_suma_subtotal.Enabled = false;
+            this.txt_suma_subtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_suma_subtotal.Location = new System.Drawing.Point(130, 9);
+            this.txt_suma_subtotal.Maximum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            0});
+            this.txt_suma_subtotal.Name = "txt_suma_subtotal";
+            this.txt_suma_subtotal.ReadOnly = true;
+            this.txt_suma_subtotal.Size = new System.Drawing.Size(67, 22);
+            this.txt_suma_subtotal.TabIndex = 119;
+            this.txt_suma_subtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txt_suma_total_descuento
+            // 
+            this.txt_suma_total_descuento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_suma_total_descuento.DecimalPlaces = 2;
+            this.txt_suma_total_descuento.Enabled = false;
+            this.txt_suma_total_descuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_suma_total_descuento.Location = new System.Drawing.Point(337, 9);
+            this.txt_suma_total_descuento.Maximum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            0});
+            this.txt_suma_total_descuento.Name = "txt_suma_total_descuento";
+            this.txt_suma_total_descuento.ReadOnly = true;
+            this.txt_suma_total_descuento.Size = new System.Drawing.Size(67, 22);
+            this.txt_suma_total_descuento.TabIndex = 120;
+            this.txt_suma_total_descuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txt_suma_total
+            // 
+            this.txt_suma_total.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_suma_total.DecimalPlaces = 2;
+            this.txt_suma_total.Enabled = false;
+            this.txt_suma_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_suma_total.Location = new System.Drawing.Point(506, 9);
+            this.txt_suma_total.Maximum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            0});
+            this.txt_suma_total.Name = "txt_suma_total";
+            this.txt_suma_total.ReadOnly = true;
+            this.txt_suma_total.Size = new System.Drawing.Size(67, 22);
+            this.txt_suma_total.TabIndex = 121;
+            this.txt_suma_total.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txt_suma_utilidad
+            // 
+            this.txt_suma_utilidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_suma_utilidad.DecimalPlaces = 2;
+            this.txt_suma_utilidad.Enabled = false;
+            this.txt_suma_utilidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_suma_utilidad.Location = new System.Drawing.Point(688, 9);
+            this.txt_suma_utilidad.Maximum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            0});
+            this.txt_suma_utilidad.Name = "txt_suma_utilidad";
+            this.txt_suma_utilidad.ReadOnly = true;
+            this.txt_suma_utilidad.Size = new System.Drawing.Size(67, 22);
+            this.txt_suma_utilidad.TabIndex = 122;
+            this.txt_suma_utilidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
+            this.panel2.Controls.Add(this.txt_suma_utilidad);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.txt_suma_subtotal);
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.txt_suma_total_descuento);
+            this.panel2.Controls.Add(this.txt_suma_total);
+            this.panel2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.panel2.Location = new System.Drawing.Point(240, 594);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(763, 41);
+            this.panel2.TabIndex = 118;
+            // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -378,91 +472,49 @@ namespace Proyecto_fina
             this.img_tabla_vacia.TabStop = false;
             this.img_tabla_vacia.Visible = false;
             // 
-            // txt_suma_subtotal
+            // label7
             // 
-            this.txt_suma_subtotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_suma_subtotal.DecimalPlaces = 2;
-            this.txt_suma_subtotal.Enabled = false;
-            this.txt_suma_subtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_suma_subtotal.Location = new System.Drawing.Point(11, 9);
-            this.txt_suma_subtotal.Maximum = new decimal(new int[] {
-            1410065408,
-            2,
-            0,
-            0});
-            this.txt_suma_subtotal.Name = "txt_suma_subtotal";
-            this.txt_suma_subtotal.ReadOnly = true;
-            this.txt_suma_subtotal.Size = new System.Drawing.Size(67, 22);
-            this.txt_suma_subtotal.TabIndex = 119;
-            this.txt_suma_subtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label7.Location = new System.Drawing.Point(12, 11);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(112, 16);
+            this.label7.TabIndex = 119;
+            this.label7.Text = "Suma de subtotal";
             // 
-            // txt_suma_total_descuento
+            // label8
             // 
-            this.txt_suma_total_descuento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_suma_total_descuento.DecimalPlaces = 2;
-            this.txt_suma_total_descuento.Enabled = false;
-            this.txt_suma_total_descuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_suma_total_descuento.Location = new System.Drawing.Point(84, 9);
-            this.txt_suma_total_descuento.Maximum = new decimal(new int[] {
-            1410065408,
-            2,
-            0,
-            0});
-            this.txt_suma_total_descuento.Name = "txt_suma_total_descuento";
-            this.txt_suma_total_descuento.ReadOnly = true;
-            this.txt_suma_total_descuento.Size = new System.Drawing.Size(67, 22);
-            this.txt_suma_total_descuento.TabIndex = 120;
-            this.txt_suma_total_descuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label8.Location = new System.Drawing.Point(203, 11);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(128, 16);
+            this.label8.TabIndex = 120;
+            this.label8.Text = "Suma de descuento";
             // 
-            // txt_suma_total
+            // label9
             // 
-            this.txt_suma_total.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_suma_total.DecimalPlaces = 2;
-            this.txt_suma_total.Enabled = false;
-            this.txt_suma_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_suma_total.Location = new System.Drawing.Point(157, 9);
-            this.txt_suma_total.Maximum = new decimal(new int[] {
-            1410065408,
-            2,
-            0,
-            0});
-            this.txt_suma_total.Name = "txt_suma_total";
-            this.txt_suma_total.ReadOnly = true;
-            this.txt_suma_total.Size = new System.Drawing.Size(67, 22);
-            this.txt_suma_total.TabIndex = 121;
-            this.txt_suma_total.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label9.Location = new System.Drawing.Point(410, 11);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(90, 16);
+            this.label9.TabIndex = 121;
+            this.label9.Text = "Suma de total";
             // 
-            // txt_suma_utilidad
+            // label10
             // 
-            this.txt_suma_utilidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_suma_utilidad.DecimalPlaces = 2;
-            this.txt_suma_utilidad.Enabled = false;
-            this.txt_suma_utilidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_suma_utilidad.Location = new System.Drawing.Point(230, 9);
-            this.txt_suma_utilidad.Maximum = new decimal(new int[] {
-            1410065408,
-            2,
-            0,
-            0});
-            this.txt_suma_utilidad.Name = "txt_suma_utilidad";
-            this.txt_suma_utilidad.ReadOnly = true;
-            this.txt_suma_utilidad.Size = new System.Drawing.Size(67, 22);
-            this.txt_suma_utilidad.TabIndex = 122;
-            this.txt_suma_utilidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
-            this.panel2.Controls.Add(this.txt_suma_subtotal);
-            this.panel2.Controls.Add(this.txt_suma_utilidad);
-            this.panel2.Controls.Add(this.txt_suma_total_descuento);
-            this.panel2.Controls.Add(this.txt_suma_total);
-            this.panel2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.panel2.Location = new System.Drawing.Point(697, 594);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(306, 41);
-            this.panel2.TabIndex = 118;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label10.Location = new System.Drawing.Point(579, 11);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(108, 16);
+            this.label10.TabIndex = 122;
+            this.label10.Text = "Suma de utilidad";
             // 
             // FormReporteVentas
             // 
@@ -485,12 +537,13 @@ namespace Proyecto_fina
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_ventas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_tabla_vacia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_suma_subtotal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_suma_total_descuento)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_suma_total)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_suma_utilidad)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_tabla_vacia)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -531,5 +584,9 @@ namespace Proyecto_fina
         public System.Windows.Forms.NumericUpDown txt_suma_total;
         public System.Windows.Forms.NumericUpDown txt_suma_utilidad;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }

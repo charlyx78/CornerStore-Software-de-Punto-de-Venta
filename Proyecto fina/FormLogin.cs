@@ -24,7 +24,7 @@ namespace Proyecto_fina
         {
             cb_cajas.DataSource = cargarCajas();
             cb_cajas.DisplayMember = "numero_caja";
-            cb_cajas.ValueMember = "id_caja";
+            cb_cajas.ValueMember = "ID";
             cb_login_usuario.DataSource = u.cargarUsuarios();
             cb_login_usuario.DisplayMember = "CURP";
             cb_login_usuario.ValueMember = "id_usuario_rol";

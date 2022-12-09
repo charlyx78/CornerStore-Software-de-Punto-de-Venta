@@ -154,8 +154,8 @@ namespace Proyecto_fina
 
                 p.Codigo_producto = (int)dg_productos.CurrentRow.Cells[0].Value;
 
-                SqlDataReader rd = u.getUsuarioCambio("tb_productos", "id_producto", p.Codigo_producto);
-                SqlDataReader rd2 = u.getFechaCambio("tb_productos", "id_producto", p.Codigo_producto);
+                SqlDataReader rd = Utilidades.getUsuarioCambio("tb_productos", "id_producto", p.Codigo_producto);
+                SqlDataReader rd2 = Utilidades.getFechaCambio("tb_productos", "id_producto", p.Codigo_producto);
 
                 if (rd.HasRows && rd2.HasRows)
                 {

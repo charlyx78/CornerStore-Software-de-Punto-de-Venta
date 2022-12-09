@@ -34,6 +34,8 @@ namespace Proyecto_fina
             this.panel_contenedor = new System.Windows.Forms.Panel();
             this.panel_formularios = new System.Windows.Forms.Panel();
             this.panel_menu = new System.Windows.Forms.Panel();
+            this.btn_reporte_cajeros = new System.Windows.Forms.Button();
+            this.btn_consultar_recibos = new System.Windows.Forms.Button();
             this.btn_pagina_reporte_ventas = new System.Windows.Forms.Button();
             this.btn_consulta = new System.Windows.Forms.Button();
             this.btn_pagina_reporte_inventario = new System.Windows.Forms.Button();
@@ -51,8 +53,8 @@ namespace Proyecto_fina
             this.btn_minimizar = new System.Windows.Forms.PictureBox();
             this.btn_maximizar = new System.Windows.Forms.PictureBox();
             this.btn_cerrar = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_pagina_cajas = new System.Windows.Forms.Button();
+            this.btn_pagina_cajeros = new System.Windows.Forms.Button();
             this.panel_contenedor.SuspendLayout();
             this.panel_menu.SuspendLayout();
             this.panel_titulo.SuspendLayout();
@@ -93,8 +95,10 @@ namespace Proyecto_fina
             // panel_menu
             // 
             this.panel_menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(12)))), ((int)(((byte)(13)))));
-            this.panel_menu.Controls.Add(this.button2);
-            this.panel_menu.Controls.Add(this.button1);
+            this.panel_menu.Controls.Add(this.btn_pagina_cajeros);
+            this.panel_menu.Controls.Add(this.btn_pagina_cajas);
+            this.panel_menu.Controls.Add(this.btn_reporte_cajeros);
+            this.panel_menu.Controls.Add(this.btn_consultar_recibos);
             this.panel_menu.Controls.Add(this.btn_pagina_reporte_ventas);
             this.panel_menu.Controls.Add(this.btn_consulta);
             this.panel_menu.Controls.Add(this.btn_pagina_reporte_inventario);
@@ -108,6 +112,40 @@ namespace Proyecto_fina
             this.panel_menu.Size = new System.Drawing.Size(200, 680);
             this.panel_menu.TabIndex = 1;
             // 
+            // btn_reporte_cajeros
+            // 
+            this.btn_reporte_cajeros.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_reporte_cajeros.FlatAppearance.BorderSize = 0;
+            this.btn_reporte_cajeros.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(208)))), ((int)(((byte)(217)))));
+            this.btn_reporte_cajeros.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(157)))), ((int)(((byte)(166)))));
+            this.btn_reporte_cajeros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_reporte_cajeros.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_reporte_cajeros.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btn_reporte_cajeros.Location = new System.Drawing.Point(0, 475);
+            this.btn_reporte_cajeros.Name = "btn_reporte_cajeros";
+            this.btn_reporte_cajeros.Size = new System.Drawing.Size(200, 42);
+            this.btn_reporte_cajeros.TabIndex = 8;
+            this.btn_reporte_cajeros.Text = "Reporte de cajeros";
+            this.btn_reporte_cajeros.UseVisualStyleBackColor = true;
+            this.btn_reporte_cajeros.Click += new System.EventHandler(this.btn_reporte_cajeros_Click);
+            // 
+            // btn_consultar_recibos
+            // 
+            this.btn_consultar_recibos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_consultar_recibos.FlatAppearance.BorderSize = 0;
+            this.btn_consultar_recibos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(208)))), ((int)(((byte)(217)))));
+            this.btn_consultar_recibos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(157)))), ((int)(((byte)(166)))));
+            this.btn_consultar_recibos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_consultar_recibos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_consultar_recibos.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btn_consultar_recibos.Location = new System.Drawing.Point(0, 412);
+            this.btn_consultar_recibos.Name = "btn_consultar_recibos";
+            this.btn_consultar_recibos.Size = new System.Drawing.Size(200, 42);
+            this.btn_consultar_recibos.TabIndex = 7;
+            this.btn_consultar_recibos.Text = "Consultar";
+            this.btn_consultar_recibos.UseVisualStyleBackColor = true;
+            this.btn_consultar_recibos.Click += new System.EventHandler(this.btn_consultar_recibos_Click);
+            // 
             // btn_pagina_reporte_ventas
             // 
             this.btn_pagina_reporte_ventas.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -117,7 +155,7 @@ namespace Proyecto_fina
             this.btn_pagina_reporte_ventas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_pagina_reporte_ventas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_pagina_reporte_ventas.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_pagina_reporte_ventas.Location = new System.Drawing.Point(0, 261);
+            this.btn_pagina_reporte_ventas.Location = new System.Drawing.Point(0, 354);
             this.btn_pagina_reporte_ventas.Name = "btn_pagina_reporte_ventas";
             this.btn_pagina_reporte_ventas.Size = new System.Drawing.Size(200, 42);
             this.btn_pagina_reporte_ventas.TabIndex = 6;
@@ -134,7 +172,7 @@ namespace Proyecto_fina
             this.btn_consulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_consulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_consulta.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_consulta.Location = new System.Drawing.Point(0, 324);
+            this.btn_consulta.Location = new System.Drawing.Point(0, 417);
             this.btn_consulta.Name = "btn_consulta";
             this.btn_consulta.Size = new System.Drawing.Size(200, 42);
             this.btn_consulta.TabIndex = 5;
@@ -151,7 +189,7 @@ namespace Proyecto_fina
             this.btn_pagina_reporte_inventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_pagina_reporte_inventario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_pagina_reporte_inventario.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_pagina_reporte_inventario.Location = new System.Drawing.Point(0, 198);
+            this.btn_pagina_reporte_inventario.Location = new System.Drawing.Point(0, 291);
             this.btn_pagina_reporte_inventario.Name = "btn_pagina_reporte_inventario";
             this.btn_pagina_reporte_inventario.Size = new System.Drawing.Size(200, 42);
             this.btn_pagina_reporte_inventario.TabIndex = 4;
@@ -168,7 +206,7 @@ namespace Proyecto_fina
             this.btn_pagina_productos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_pagina_productos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_pagina_productos.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_pagina_productos.Location = new System.Drawing.Point(0, 142);
+            this.btn_pagina_productos.Location = new System.Drawing.Point(0, 235);
             this.btn_pagina_productos.Name = "btn_pagina_productos";
             this.btn_pagina_productos.Size = new System.Drawing.Size(200, 42);
             this.btn_pagina_productos.TabIndex = 3;
@@ -185,7 +223,7 @@ namespace Proyecto_fina
             this.btn_pagina_descuentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_pagina_descuentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_pagina_descuentos.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_pagina_descuentos.Location = new System.Drawing.Point(0, 86);
+            this.btn_pagina_descuentos.Location = new System.Drawing.Point(0, 179);
             this.btn_pagina_descuentos.Name = "btn_pagina_descuentos";
             this.btn_pagina_descuentos.Size = new System.Drawing.Size(200, 42);
             this.btn_pagina_descuentos.TabIndex = 2;
@@ -201,7 +239,7 @@ namespace Proyecto_fina
             this.btn_cerrar_sesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cerrar_sesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cerrar_sesion.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_cerrar_sesion.Location = new System.Drawing.Point(0, 569);
+            this.btn_cerrar_sesion.Location = new System.Drawing.Point(0, 623);
             this.btn_cerrar_sesion.Name = "btn_cerrar_sesion";
             this.btn_cerrar_sesion.Size = new System.Drawing.Size(200, 30);
             this.btn_cerrar_sesion.TabIndex = 1;
@@ -218,7 +256,7 @@ namespace Proyecto_fina
             this.btn_pagina_departamentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_pagina_departamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_pagina_departamentos.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_pagina_departamentos.Location = new System.Drawing.Point(0, 30);
+            this.btn_pagina_departamentos.Location = new System.Drawing.Point(0, 123);
             this.btn_pagina_departamentos.Name = "btn_pagina_departamentos";
             this.btn_pagina_departamentos.Size = new System.Drawing.Size(200, 42);
             this.btn_pagina_departamentos.TabIndex = 0;
@@ -355,37 +393,39 @@ namespace Proyecto_fina
             this.btn_cerrar.TabStop = false;
             this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
             // 
-            // button1
+            // btn_pagina_cajas
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(208)))), ((int)(((byte)(217)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(157)))), ((int)(((byte)(166)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.button1.Location = new System.Drawing.Point(0, 319);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 42);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Consultar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_pagina_cajas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_pagina_cajas.FlatAppearance.BorderSize = 0;
+            this.btn_pagina_cajas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(208)))), ((int)(((byte)(217)))));
+            this.btn_pagina_cajas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(157)))), ((int)(((byte)(166)))));
+            this.btn_pagina_cajas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_pagina_cajas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_pagina_cajas.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btn_pagina_cajas.Location = new System.Drawing.Point(0, 16);
+            this.btn_pagina_cajas.Name = "btn_pagina_cajas";
+            this.btn_pagina_cajas.Size = new System.Drawing.Size(200, 42);
+            this.btn_pagina_cajas.TabIndex = 9;
+            this.btn_pagina_cajas.Text = "Cajas";
+            this.btn_pagina_cajas.UseVisualStyleBackColor = true;
+            this.btn_pagina_cajas.Click += new System.EventHandler(this.btn_pagina_cajas_Click);
             // 
-            // button2
+            // btn_pagina_cajeros
             // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(208)))), ((int)(((byte)(217)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(157)))), ((int)(((byte)(166)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.button2.Location = new System.Drawing.Point(0, 382);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 42);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Reporte de cajeros";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_pagina_cajeros.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_pagina_cajeros.FlatAppearance.BorderSize = 0;
+            this.btn_pagina_cajeros.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(208)))), ((int)(((byte)(217)))));
+            this.btn_pagina_cajeros.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(157)))), ((int)(((byte)(166)))));
+            this.btn_pagina_cajeros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_pagina_cajeros.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_pagina_cajeros.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btn_pagina_cajeros.Location = new System.Drawing.Point(0, 70);
+            this.btn_pagina_cajeros.Name = "btn_pagina_cajeros";
+            this.btn_pagina_cajeros.Size = new System.Drawing.Size(200, 42);
+            this.btn_pagina_cajeros.TabIndex = 10;
+            this.btn_pagina_cajeros.Text = "Cajeros";
+            this.btn_pagina_cajeros.UseVisualStyleBackColor = true;
+            this.btn_pagina_cajeros.Click += new System.EventHandler(this.btn_pagina_cajeros_Click);
             // 
             // HomeAdministrador
             // 
@@ -434,7 +474,9 @@ namespace Proyecto_fina
         private System.Windows.Forms.Button btn_pagina_reporte_inventario;
         private System.Windows.Forms.Button btn_consulta;
         private System.Windows.Forms.Button btn_pagina_reporte_ventas;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_reporte_cajeros;
+        private System.Windows.Forms.Button btn_consultar_recibos;
+        private System.Windows.Forms.Button btn_pagina_cajeros;
+        private System.Windows.Forms.Button btn_pagina_cajas;
     }
 }

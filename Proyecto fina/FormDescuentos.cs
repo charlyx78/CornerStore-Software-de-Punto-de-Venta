@@ -121,8 +121,8 @@ namespace Proyecto_fina
 
                 dsc.Id_descuento = (int)dg_descuentos.CurrentRow.Cells[0].Value;
 
-                SqlDataReader rd = u.getUsuarioCambio("tb_descuentos", "id_descuento", dsc.Id_descuento);
-                SqlDataReader rd2 = u.getFechaCambio("tb_descuentos", "id_descuento", dsc.Id_descuento);
+                SqlDataReader rd = Utilidades.getUsuarioCambio("tb_descuentos", "id_descuento", dsc.Id_descuento);
+                SqlDataReader rd2 = Utilidades.getFechaCambio("tb_descuentos", "id_descuento", dsc.Id_descuento);
 
 
                 if (rd.HasRows && rd2.HasRows)

@@ -36,6 +36,14 @@ namespace Proyecto_fina
             this.panel_formularios.Tag = fh;
             fh.Show();
         }
+        private void btn_pagina_cajas_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new FormCajas(this.getUsuarioID()));
+        }
+        private void btn_pagina_cajeros_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new FormCajeros(this.getUsuarioID()));
+        }
         private void btn_pagina_departamentos_Click_1(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new FormDepartamentos(this.getUsuarioID()));
@@ -58,7 +66,15 @@ namespace Proyecto_fina
         }
         private void btn_consulta_Click(object sender, EventArgs e)
         {
+        }
+        private void btn_consultar_recibos_Click(object sender, EventArgs e)
+        {
             AbrirFormularioHijo(new FormConsultarRecibos(this.getUsuarioID()));
+        }
+
+        private void btn_reporte_cajeros_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new FormReporteCajero(this.getUsuarioID()));
         }
         private void btn_cerrar_sesion_Click(object sender, EventArgs e)
         {
@@ -158,7 +174,6 @@ namespace Proyecto_fina
             lbl_fecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
             lbl_hora.Text = DateTime.Now.ToString("HH:mm:ss");
         }
-
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]

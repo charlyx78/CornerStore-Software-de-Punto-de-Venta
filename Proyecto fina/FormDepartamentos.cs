@@ -92,8 +92,8 @@ namespace Proyecto_fina
 
                 d.Id_departamento = (int)dg_departamentos.CurrentRow.Cells[0].Value;
 
-                SqlDataReader rd = u.getUsuarioCambio("tb_departamentos", "id_departamento", d.Id_departamento);
-                SqlDataReader rd2 = u.getFechaCambio("tb_departamentos", "id_departamento", d.Id_departamento);
+                SqlDataReader rd = Utilidades.getUsuarioCambio("tb_departamentos", "id_departamento", d.Id_departamento);
+                SqlDataReader rd2 = Utilidades.getFechaCambio("tb_departamentos", "id_departamento", d.Id_departamento);
 
                 if (rd.HasRows && rd2.HasRows)
                 {

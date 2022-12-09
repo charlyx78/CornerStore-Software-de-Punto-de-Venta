@@ -30,7 +30,6 @@ namespace Proyecto_fina
             }
             else if (lbl_id_departamento.Text == "")
             {
-
                 try
                 {
                     dptos.Nombre_departamento = txt_nombre_departamento.Text.Trim().ToUpper();
@@ -114,6 +113,11 @@ namespace Proyecto_fina
                     e.Cancel = true;
                 }
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

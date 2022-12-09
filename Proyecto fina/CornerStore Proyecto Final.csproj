@@ -59,6 +59,18 @@
     <Compile Include="FormBuscarProducto.Designer.cs">
       <DependentUpon>FormBuscarProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCajas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCajas.Designer.cs">
+      <DependentUpon>FormCajas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCajeros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCajeros.Designer.cs">
+      <DependentUpon>FormCajeros.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormConsultarRecibos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +82,18 @@
     </Compile>
     <Compile Include="FormDevolucion.Designer.cs">
       <DependentUpon>FormDevolucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNuevaCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNuevaCaja.Designer.cs">
+      <DependentUpon>FormNuevaCaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNuevoCajero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNuevoCajero.Designer.cs">
+      <DependentUpon>FormNuevoCajero.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPago.cs">
       <SubType>Form</SubType>
@@ -112,6 +136,12 @@
     </Compile>
     <Compile Include="FormProductos.Designer.cs">
       <DependentUpon>FormProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReporteCajero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReporteCajero.Designer.cs">
+      <DependentUpon>FormReporteCajero.cs</DependentUpon>
     </Compile>
     <Compile Include="FormReporteInventario.cs">
       <SubType>Form</SubType>
@@ -206,6 +236,12 @@
     <EmbeddedResource Include="FormBuscarProducto.resx">
       <DependentUpon>FormBuscarProducto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCajas.resx">
+      <DependentUpon>FormCajas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCajeros.resx">
+      <DependentUpon>FormCajeros.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormConsultarRecibos.resx">
       <DependentUpon>FormConsultarRecibos.cs</DependentUpon>
     </EmbeddedResource>
@@ -217,6 +253,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDevolucion.resx">
       <DependentUpon>FormDevolucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNuevaCaja.resx">
+      <DependentUpon>FormNuevaCaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNuevoCajero.resx">
+      <DependentUpon>FormNuevoCajero.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormNuevoDepartamento.resx">
       <DependentUpon>FormNuevoDepartamento.cs</DependentUpon>
@@ -232,6 +274,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormProductos.resx">
       <DependentUpon>FormProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReporteCajero.resx">
+      <DependentUpon>FormReporteCajero.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormReporteInventario.resx">
       <DependentUpon>FormReporteInventario.cs</DependentUpon>

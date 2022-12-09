@@ -1,7 +1,7 @@
 ﻿
 namespace Proyecto_fina
 {
-    partial class FormNuevoDepartamento
+    partial class FormNuevoCajero
     {
         /// <summary>
         /// Required designer variable.
@@ -56,8 +56,7 @@ namespace Proyecto_fina
             this.panel1.Location = new System.Drawing.Point(13, 13);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(380, 489);
-            this.panel1.TabIndex = 87;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel1.TabIndex = 88;
             // 
             // rb_no_permite_devoluciones
             // 
@@ -132,7 +131,6 @@ namespace Proyecto_fina
             this.button1.TabIndex = 90;
             this.button1.Text = "Cancelar";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_nuevo_producto
             // 
@@ -148,7 +146,6 @@ namespace Proyecto_fina
             this.btn_nuevo_producto.TabIndex = 89;
             this.btn_nuevo_producto.Text = "Guardar";
             this.btn_nuevo_producto.UseVisualStyleBackColor = false;
-            this.btn_nuevo_producto.Click += new System.EventHandler(this.btn_nuevo_producto_Click);
             // 
             // label1
             // 
@@ -169,16 +166,14 @@ namespace Proyecto_fina
             this.txt_nombre_departamento.Size = new System.Drawing.Size(368, 22);
             this.txt_nombre_departamento.TabIndex = 71;
             // 
-            // FormNuevoDepartamento
+            // FormNuevoCajero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(406, 514);
             this.Controls.Add(this.panel1);
-            this.Name = "FormNuevoDepartamento";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nuevo departamento";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormNuevoDepartamento_FormClosing);
+            this.Name = "FormNuevoCajero";
+            this.Text = "Nuevo cajero";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -188,14 +183,14 @@ namespace Proyecto_fina
         #endregion
 
         private System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.RadioButton rb_no_permite_devoluciones;
+        public System.Windows.Forms.RadioButton rb_permite_devoluciones;
+        private System.Windows.Forms.Label label8;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label lbl_id_departamento;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btn_nuevo_producto;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox txt_nombre_departamento;
-        public System.Windows.Forms.Label lbl_id_departamento;
-        public System.Windows.Forms.Label label2;
-        public System.Windows.Forms.RadioButton rb_no_permite_devoluciones;
-        public System.Windows.Forms.RadioButton rb_permite_devoluciones;
-        private System.Windows.Forms.Label label8;
     }
 }

@@ -47,7 +47,7 @@ namespace Proyecto_fina
             try
             {
                 Conexion cn = new Conexion();
-                SqlDataAdapter da = new SqlDataAdapter("SP_CARGAR_DESCUENTOS", cn.conectar());
+                SqlDataAdapter da = new SqlDataAdapter("SP_CARGAR_DESCUENTO", cn.conectar());
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 DataTable dt = new DataTable();
                 da.Fill(dt);

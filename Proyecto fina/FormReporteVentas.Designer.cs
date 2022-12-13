@@ -29,15 +29,15 @@ namespace Proyecto_fina
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cb_caja = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cb_departamento = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -62,12 +62,12 @@ namespace Proyecto_fina
             this.txt_suma_total = new System.Windows.Forms.NumericUpDown();
             this.txt_suma_utilidad = new System.Windows.Forms.NumericUpDown();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.img_tabla_vacia = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.img_tabla_vacia = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_ventas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_suma_subtotal)).BeginInit();
@@ -98,7 +98,7 @@ namespace Proyecto_fina
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cb_caja);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.cb_departamento);
             this.panel1.Controls.Add(this.label2);
@@ -147,14 +147,14 @@ namespace Proyecto_fina
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker1.TabIndex = 107;
             // 
-            // comboBox1
+            // cb_caja
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(215, 27);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(55, 24);
-            this.comboBox1.TabIndex = 106;
+            this.cb_caja.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_caja.FormattingEnabled = true;
+            this.cb_caja.Location = new System.Drawing.Point(215, 27);
+            this.cb_caja.Name = "cb_caja";
+            this.cb_caja.Size = new System.Drawing.Size(55, 24);
+            this.cb_caja.TabIndex = 106;
             // 
             // label3
             // 
@@ -202,6 +202,7 @@ namespace Proyecto_fina
             this.btn_filtros.Text = "Buscar";
             this.btn_filtros.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_filtros.UseVisualStyleBackColor = false;
+            this.btn_filtros.Click += new System.EventHandler(this.btn_filtros_Click);
             // 
             // label5
             // 
@@ -240,15 +241,15 @@ namespace Proyecto_fina
             this.dg_ventas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
             this.dg_ventas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dg_ventas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.NullValue = null;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_ventas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.NullValue = null;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_ventas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dg_ventas.ColumnHeadersHeight = 40;
             this.dg_ventas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dg_ventas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -273,13 +274,13 @@ namespace Proyecto_fina
             this.dg_ventas.RowHeadersVisible = false;
             this.dg_ventas.RowHeadersWidth = 80;
             this.dg_ventas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.NullValue = null;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(208)))), ((int)(((byte)(193)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            this.dg_ventas.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.NullValue = null;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(208)))), ((int)(((byte)(193)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            this.dg_ventas.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dg_ventas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dg_ventas.Size = new System.Drawing.Size(991, 457);
             this.dg_ventas.TabIndex = 113;
@@ -422,6 +423,11 @@ namespace Proyecto_fina
             2,
             0,
             0});
+            this.txt_suma_utilidad.Minimum = new decimal(new int[] {
+            1874919424,
+            2328306,
+            0,
+            -2147483648});
             this.txt_suma_utilidad.Name = "txt_suma_utilidad";
             this.txt_suma_utilidad.ReadOnly = true;
             this.txt_suma_utilidad.Size = new System.Drawing.Size(67, 22);
@@ -445,6 +451,50 @@ namespace Proyecto_fina
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(763, 41);
             this.panel2.TabIndex = 118;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label8.Location = new System.Drawing.Point(203, 11);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(128, 16);
+            this.label8.TabIndex = 120;
+            this.label8.Text = "Suma de descuento";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label7.Location = new System.Drawing.Point(12, 11);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(112, 16);
+            this.label7.TabIndex = 119;
+            this.label7.Text = "Suma de subtotal";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label9.Location = new System.Drawing.Point(410, 11);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(90, 16);
+            this.label9.TabIndex = 121;
+            this.label9.Text = "Suma de total";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label10.Location = new System.Drawing.Point(579, 11);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(108, 16);
+            this.label10.TabIndex = 122;
+            this.label10.Text = "Suma de utilidad";
             // 
             // button1
             // 
@@ -471,50 +521,6 @@ namespace Proyecto_fina
             this.img_tabla_vacia.TabIndex = 115;
             this.img_tabla_vacia.TabStop = false;
             this.img_tabla_vacia.Visible = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(12, 11);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(112, 16);
-            this.label7.TabIndex = 119;
-            this.label7.Text = "Suma de subtotal";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label8.Location = new System.Drawing.Point(203, 11);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(128, 16);
-            this.label8.TabIndex = 120;
-            this.label8.Text = "Suma de descuento";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label9.Location = new System.Drawing.Point(410, 11);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(90, 16);
-            this.label9.TabIndex = 121;
-            this.label9.Text = "Suma de total";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label10.Location = new System.Drawing.Point(579, 11);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(108, 16);
-            this.label10.TabIndex = 122;
-            this.label10.Text = "Suma de utilidad";
             // 
             // FormReporteVentas
             // 
@@ -565,7 +571,7 @@ namespace Proyecto_fina
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cb_caja;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_ticket;
         private System.Windows.Forms.DataGridViewTextBoxColumn caja;

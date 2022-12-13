@@ -39,6 +39,7 @@ namespace Proyecto_fina
             this.cb_cajas = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.dtp_fecha_operaciones = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -80,7 +81,7 @@ namespace Proyecto_fina
             this.btnInciciarSesion.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInciciarSesion.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.btnInciciarSesion.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnInciciarSesion.Location = new System.Drawing.Point(288, 299);
+            this.btnInciciarSesion.Location = new System.Drawing.Point(288, 352);
             this.btnInciciarSesion.Name = "btnInciciarSesion";
             this.btnInciciarSesion.Size = new System.Drawing.Size(225, 33);
             this.btnInciciarSesion.TabIndex = 5;
@@ -94,7 +95,7 @@ namespace Proyecto_fina
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(63)))));
             this.label4.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(392, 340);
+            this.label4.Location = new System.Drawing.Point(392, 393);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(16, 17);
             this.label4.TabIndex = 6;
@@ -108,7 +109,7 @@ namespace Proyecto_fina
             this.button2.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(288, 365);
+            this.button2.Location = new System.Drawing.Point(288, 418);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(225, 33);
             this.button2.TabIndex = 7;
@@ -162,12 +163,21 @@ namespace Proyecto_fina
             this.label5.TabIndex = 12;
             this.label5.Text = "cornerstore";
             // 
+            // dtp_fecha_operaciones
+            // 
+            this.dtp_fecha_operaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_fecha_operaciones.Location = new System.Drawing.Point(288, 304);
+            this.dtp_fecha_operaciones.Name = "dtp_fecha_operaciones";
+            this.dtp_fecha_operaciones.Size = new System.Drawing.Size(225, 22);
+            this.dtp_fecha_operaciones.TabIndex = 13;
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(63)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 493);
+            this.Controls.Add(this.dtp_fecha_operaciones);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cb_cajas);
@@ -199,6 +209,7 @@ namespace Proyecto_fina
         private System.Windows.Forms.ComboBox cb_cajas;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker dtp_fecha_operaciones;
     }
 }
 

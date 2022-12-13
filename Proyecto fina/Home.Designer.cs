@@ -47,6 +47,7 @@ namespace Proyecto_fina
             this.label1 = new System.Windows.Forms.Label();
             this.panel_titulo = new System.Windows.Forms.Panel();
             this.btn_maximizar = new System.Windows.Forms.PictureBox();
+            this.btn_pagina_inicio = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_restaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_minimizar)).BeginInit();
@@ -175,6 +176,7 @@ namespace Proyecto_fina
             // panel_menu
             // 
             this.panel_menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(12)))), ((int)(((byte)(13)))));
+            this.panel_menu.Controls.Add(this.btn_pagina_inicio);
             this.panel_menu.Controls.Add(this.btn_pagina_devolucion);
             this.panel_menu.Controls.Add(this.btn_cerrar_sesion);
             this.panel_menu.Controls.Add(this.btn_pagina_vender);
@@ -193,7 +195,7 @@ namespace Proyecto_fina
             this.btn_pagina_devolucion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_pagina_devolucion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_pagina_devolucion.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_pagina_devolucion.Location = new System.Drawing.Point(0, 86);
+            this.btn_pagina_devolucion.Location = new System.Drawing.Point(0, 137);
             this.btn_pagina_devolucion.Name = "btn_pagina_devolucion";
             this.btn_pagina_devolucion.Size = new System.Drawing.Size(200, 42);
             this.btn_pagina_devolucion.TabIndex = 2;
@@ -226,7 +228,7 @@ namespace Proyecto_fina
             this.btn_pagina_vender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_pagina_vender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_pagina_vender.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_pagina_vender.Location = new System.Drawing.Point(0, 30);
+            this.btn_pagina_vender.Location = new System.Drawing.Point(0, 81);
             this.btn_pagina_vender.Name = "btn_pagina_vender";
             this.btn_pagina_vender.Size = new System.Drawing.Size(200, 42);
             this.btn_pagina_vender.TabIndex = 0;
@@ -274,6 +276,23 @@ namespace Proyecto_fina
             this.btn_maximizar.TabStop = false;
             this.btn_maximizar.Click += new System.EventHandler(this.btn_maximizar_Click_1);
             // 
+            // btn_pagina_inicio
+            // 
+            this.btn_pagina_inicio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_pagina_inicio.FlatAppearance.BorderSize = 0;
+            this.btn_pagina_inicio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(208)))), ((int)(((byte)(217)))));
+            this.btn_pagina_inicio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(157)))), ((int)(((byte)(166)))));
+            this.btn_pagina_inicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_pagina_inicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_pagina_inicio.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btn_pagina_inicio.Location = new System.Drawing.Point(0, 23);
+            this.btn_pagina_inicio.Name = "btn_pagina_inicio";
+            this.btn_pagina_inicio.Size = new System.Drawing.Size(200, 42);
+            this.btn_pagina_inicio.TabIndex = 3;
+            this.btn_pagina_inicio.Text = "Inicio";
+            this.btn_pagina_inicio.UseVisualStyleBackColor = true;
+            this.btn_pagina_inicio.Click += new System.EventHandler(this.btn_pagina_inicio_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -319,5 +338,6 @@ namespace Proyecto_fina
         private System.Windows.Forms.PictureBox btn_maximizar;
         private System.Windows.Forms.Button btn_pagina_devolucion;
         private System.Windows.Forms.Label lbl_caja;
+        private System.Windows.Forms.Button btn_pagina_inicio;
     }
 }

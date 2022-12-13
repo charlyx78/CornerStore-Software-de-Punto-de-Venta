@@ -14,13 +14,15 @@ namespace Proyecto_fina
     public partial class FormVenta : Form
     {
         Utilidades uti = new Utilidades();
+        DateTime fecha_operaciones_caja;
         private int id_usuario_rol_pagina = 0;
         public int caja_activa;
         public int lista = 1;
         public float iva = 1.16f;
         public double descuento = 0;
-        public FormVenta(int id_usuario_rol, int caja)
+        public FormVenta(int id_usuario_rol, int caja, DateTime fecha_operaciones)
         {
+            fecha_operaciones_caja = fecha_operaciones;
             caja_activa = caja;
             id_usuario_rol_pagina = id_usuario_rol;
             InitializeComponent();
@@ -146,7 +148,7 @@ namespace Proyecto_fina
         {
             if (dg_carrito.RowCount > 0)
             {
-                FormPago frm = new FormPago(id_usuario_rol_pagina, caja_activa, (double)txt_total_carrito.Value, (double)txt_subtotal_carrito.Value, descuento, dg_carrito);
+                FormPago frm = new FormPago(id_usuario_rol_pagina, caja_activa, (double)txt_total_carrito.Value, (double)txt_subtotal_carrito.Value, descuento, dg_carrito, fecha_operaciones_caja);
                 AddOwnedForm(frm);
                 frm.ShowDialog();
             }

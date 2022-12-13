@@ -14,10 +14,12 @@ namespace Proyecto_fina
 
     public partial class FormDevolucion : Form
     {
+        DateTime fecha_operaciones_caja;
         int id_usuario_rol_pagina = 0;
         int caja_activa = 0;
-        public FormDevolucion(int id_usuario_rol, int caja)
+        public FormDevolucion(int id_usuario_rol, int caja, DateTime fecha_operaciones)
         {
+            fecha_operaciones_caja = fecha_operaciones;
             caja_activa = caja;
             id_usuario_rol_pagina = id_usuario_rol;
             InitializeComponent();
@@ -67,6 +69,7 @@ namespace Proyecto_fina
                 cmd2.Parameters.AddWithValue("@total_devolucion", (double)txt_total_devolucion.Value);
                 cmd2.Parameters.AddWithValue("@id_cajero", id_usuario_rol_pagina);
                 cmd2.Parameters.AddWithValue("@id_caja", caja_activa);
+                cmd2.Parameters.AddWithValue("@fecha_devolucion", fecha_operaciones_caja);
                 cmd2.ExecuteNonQuery();
 
                 Conexion con3 = new Conexion();
@@ -91,15 +94,15 @@ namespace Proyecto_fina
                     cmd4.ExecuteNonQuery();
 
                     //---DESCONTAR DE INVENTARIO---//
-                    if (row.Cells[6].Value.ToString() != "Deficiencia de producto")
-                    {
-                        Conexion con5 = new Conexion();
-                        SqlCommand cmd5 = new SqlCommand("SP_DEVOLVER_A_INVENTARIO", con5.conectar());
-                        cmd5.CommandType = CommandType.StoredProcedure;
-                        cmd5.Parameters.AddWithValue("@productos_devueltos", (double)row.Cells[1].Value);
-                        cmd5.Parameters.AddWithValue("@id_producto", (int)row.Cells[0].Value);
-                        cmd5.ExecuteNonQuery();
-                    }
+                    //if (row.Cells[6].Value.ToString() != "Deficiencia de producto")
+                    //{
+                    //    Conexion con5 = new Conexion();
+                    //    SqlCommand cmd5 = new SqlCommand("SP_DEVOLVER_A_INVENTARIO", con5.conectar());
+                    //    cmd5.CommandType = CommandType.StoredProcedure;
+                    //    cmd5.Parameters.AddWithValue("@productos_devueltos", (double)row.Cells[1].Value);
+                    //    cmd5.Parameters.AddWithValue("@id_producto", (int)row.Cells[0].Value);
+                    //    cmd5.ExecuteNonQuery();
+                    //}
                 }
 
                 Utilidades.CreaTicket ticket = new Utilidades.CreaTicket();
@@ -109,7 +112,7 @@ namespace Proyecto_fina
                 ticket.TextoIzquierda("");
                 ticket.TextoCentro("Nota de credito");
                 ticket.TextoCentro("No. de nota de credito: " + ultimo_id);
-                ticket.TextoCentro("Fecha: " + DateTime.Now.ToString());
+                ticket.TextoCentro("Fecha: " + fecha_operaciones_caja);
                 ticket.TextoCentro("Caja: " + caja_activa);
                 ticket.TextoCentro("Le atendió: " + Utilidades.getNombreUsuario(id_usuario_rol_pagina));
                 ticket.TextoCentro("");
@@ -209,8 +212,8 @@ namespace Proyecto_fina
                                 double cantidad = (double)txt_cantidad_devolucion.Value;
                                 double precio = (double)dt.Rows[0][2];
                                 int descuento = (int)dt.Rows[0][3];
-                                double subtotal = cantidad * precio;
-                                double total = subtotal - (subtotal * (descuento / 100));
+                                double subtotal = (double)dt.Rows[0][4];
+                                double total = (double)dt.Rows[0][5];
                                 string motivo_devolucion = cb_motivo_devolucion.Text;
                                 dg_carrito_devolucion.Rows.Add(id, cantidad, precio, descuento, subtotal, total, motivo_devolucion);
                             }
@@ -226,7 +229,7 @@ namespace Proyecto_fina
                                     }
                                 }
                                 double cantidadADevolver = sumaCantidadEnCarrito + (double)txt_cantidad_devolucion.Value;
-                                if ((int)dg_devolucion.CurrentRow.Cells[2].Value >= cantidadADevolver)
+                                if ((double)dg_devolucion.CurrentRow.Cells[2].Value >= cantidadADevolver)
                                 {
                                     Conexion con = new Conexion();
                                     SqlCommand cmd = new SqlCommand("SP_GET_PRODUCTO_DEVOLUCION", con.conectar());
@@ -240,8 +243,8 @@ namespace Proyecto_fina
                                     double cantidad = (double)txt_cantidad_devolucion.Value;
                                     double precio = (double)dt.Rows[0][2];
                                     int descuento = (int)dt.Rows[0][3];
-                                    double subtotal = cantidad * precio;
-                                    double total = subtotal - (subtotal * (descuento / 100));
+                                    double subtotal = (double)dt.Rows[0][4];
+                                    double total = (double)dt.Rows[0][5];
                                     string motivo_devolucion = cb_motivo_devolucion.Text;
                                     dg_carrito_devolucion.Rows.Add(id, cantidad, precio, descuento, subtotal, total, motivo_devolucion);
                                 }
@@ -275,8 +278,8 @@ namespace Proyecto_fina
             double total_carrito = 0;
             foreach (DataGridViewRow row in dg_carrito_devolucion.Rows)
             {
-                subtotal_carrito += (double)row.Cells[1].Value * (double)row.Cells[2].Value;
-                total_carrito += ((double)row.Cells[1].Value * (double)row.Cells[2].Value) - ((double)row.Cells[1].Value * (double)row.Cells[2].Value) * ((int)row.Cells[3].Value);
+                subtotal_carrito += (double)row.Cells[4].Value;
+                total_carrito += (double)row.Cells[5].Value;
             }
             txt_subtotal_devolucion.Value = (decimal)(double)subtotal_carrito;
             txt_total_devolucion.Value = (decimal)(double)total_carrito;

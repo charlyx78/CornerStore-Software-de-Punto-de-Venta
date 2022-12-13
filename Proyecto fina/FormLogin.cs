@@ -23,7 +23,7 @@ namespace Proyecto_fina
         private void FormLogin_Load(object sender, EventArgs e)
         {
             cb_cajas.DataSource = cargarCajas();
-            cb_cajas.DisplayMember = "numero_caja";
+            cb_cajas.DisplayMember = "Numero";
             cb_cajas.ValueMember = "ID";
             cb_login_usuario.DataSource = u.cargarUsuarios();
             cb_login_usuario.DisplayMember = "CURP";
@@ -51,7 +51,7 @@ namespace Proyecto_fina
                     }
                     else if ((int)dt.Rows[0][4] == 2) {
                         //los parametros que se pasan a la ventana home son las posiciones en la tabla de nombre y ambos apellidos, para que sean mostrados en la misma
-                        new Home((int)dt.Rows[0][0], Convert.ToInt32(cb_cajas.SelectedValue)).Show();
+                        new Home((int)dt.Rows[0][0], Convert.ToInt32(cb_cajas.SelectedValue), dtp_fecha_operaciones.Value).Show();
                     }
                 }
                 else

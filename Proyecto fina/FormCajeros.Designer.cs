@@ -160,8 +160,7 @@ namespace Proyecto_fina
             this.dg_cajeros.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dg_cajeros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dg_cajeros.Size = new System.Drawing.Size(897, 523);
-            this.dg_cajeros.TabIndex = 115;
-            // 
+            this.dg_cajeros.TabIndex = 115;            // 
             // btn_cerrar_productos
             // 
             this.btn_cerrar_productos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -206,6 +205,7 @@ namespace Proyecto_fina
             this.btn_editar_cajero.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_editar_cajero.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_editar_cajero.UseVisualStyleBackColor = false;
+            this.btn_editar_cajero.Click += new System.EventHandler(this.btn_editar_cajero_Click);
             // 
             // btn_nuevo_cajero
             // 
@@ -245,6 +245,7 @@ namespace Proyecto_fina
             this.btn_eliminar_cajero.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_eliminar_cajero.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_eliminar_cajero.UseVisualStyleBackColor = false;
+            this.btn_eliminar_cajero.Click += new System.EventHandler(this.btn_eliminar_cajero_Click);
             // 
             // FormCajeros
             // 
@@ -264,6 +265,7 @@ namespace Proyecto_fina
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormCajeros";
             this.Text = "FormCajeros";
+            this.Load += new System.EventHandler(this.FormCajeros_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_cajeros)).EndInit();

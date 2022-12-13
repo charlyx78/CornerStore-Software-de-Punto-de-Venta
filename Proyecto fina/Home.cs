@@ -16,9 +16,11 @@ namespace Proyecto_fina
         Utilidades uti = new Utilidades();
         int id_usuario_rol_pagina = 0;
         int caja_activa = 0;
-        public Home(int id_usuario_rol, int caja)
+        DateTime fecha_operaciones_caja;
+        public Home(int id_usuario_rol, int caja, DateTime fecha_operaciones)
         {
             InitializeComponent();
+            fecha_operaciones_caja = fecha_operaciones;
             lbl_nombre_cajero.Text = Utilidades.getNombreUsuario(id_usuario_rol);
             id_usuario_rol_pagina = id_usuario_rol;
             caja_activa = caja;
@@ -40,11 +42,15 @@ namespace Proyecto_fina
         }
         private void btn_pagina_vender_Click(object sender, EventArgs e)
         {
-            AbrirFormularioHijo(new FormVenta(this.getUsuarioID(), caja_activa));
+            AbrirFormularioHijo(new FormVenta(this.getUsuarioID(), caja_activa, fecha_operaciones_caja));
         }
         private void btn_pagina_devolucion_Click(object sender, EventArgs e)
         {
-            AbrirFormularioHijo(new FormDevolucion(this.getUsuarioID(), caja_activa));
+            AbrirFormularioHijo(new FormDevolucion(this.getUsuarioID(), caja_activa, fecha_operaciones_caja));
+        }
+        private void btn_pagina_inicio_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new FormPaginaPrincipal());
         }
         #region funcionalidades del formulario
         //RESIZE METODO PARA REDIMENSIONAR/CAMBIAR TAMAÑO A FORMULARIO EN TIEMPO DE EJECUCION ----------------------------------------------------------

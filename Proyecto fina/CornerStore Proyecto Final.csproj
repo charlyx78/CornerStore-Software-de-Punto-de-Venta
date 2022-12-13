@@ -95,6 +95,12 @@
     <Compile Include="FormNuevoCajero.Designer.cs">
       <DependentUpon>FormNuevoCajero.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPaginaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPaginaPrincipal.Designer.cs">
+      <DependentUpon>FormPaginaPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPago.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -269,6 +275,9 @@
     <EmbeddedResource Include="FormNuevoProducto.resx">
       <DependentUpon>FormNuevoProducto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormPaginaPrincipal.resx">
+      <DependentUpon>FormPaginaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPago.resx">
       <DependentUpon>FormPago.cs</DependentUpon>
     </EmbeddedResource>
@@ -391,6 +400,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-devolución-de-compra-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-feliz-100.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

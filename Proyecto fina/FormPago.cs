@@ -16,8 +16,10 @@ namespace Proyecto_fina
         double pagando;
         double cambio;
         int caja_activa=0;
-        public FormPago(int id_cajero, int caja, double total, double subtotal, double descuento, DataGridView carrito)
+        DateTime fecha_operaciones_caja;
+        public FormPago(int id_cajero, int caja, double total, double subtotal, double descuento, DataGridView carrito, DateTime fecha_operaciones)
         {
+            fecha_operaciones_caja = fecha_operaciones;
             caja_activa = caja;
             id_usuario_rol_pagina = id_cajero;
             descuentoPago = descuento;
@@ -90,6 +92,7 @@ namespace Proyecto_fina
                 cmd.Parameters.AddWithValue("@total_ticket", totalPago);
                 cmd.Parameters.AddWithValue("@id_cajero", id_usuario_rol_pagina);
                 cmd.Parameters.AddWithValue("@id_caja", caja_activa);
+                cmd.Parameters.AddWithValue("@fecha_venta", fecha_operaciones_caja);
                 int cantidad = cmd.ExecuteNonQuery();
 
                 Conexion con2 = new Conexion();
@@ -100,13 +103,7 @@ namespace Proyecto_fina
                 cmd2.Parameters.AddWithValue("@pago_vales", (double)txt_pago_vales.Value);
                 int cantidad2 = cmd2.ExecuteNonQuery();
 
-                Conexion con3 = new Conexion();
-                SqlCommand cmd3 = new SqlCommand("SP_CREAR_TICKET", con3.conectar());
-                cmd3.CommandType = CommandType.StoredProcedure;
-                cmd3.Parameters.AddWithValue("@id_detalles_ticket", getUltimoIDDetallesTicket());
-                cmd3.Parameters.AddWithValue("@id_pago_ticket", getUltimoIDPago());
-                int cantidad3 = cmd3.ExecuteNonQuery();
-                if (cantidad == 1 && cantidad2 == 1 && cantidad3 == 1)
+                if (cantidad == 1 && cantidad2 == 2)
                 {
                     con.desconectar();
                     return true;
@@ -166,7 +163,7 @@ namespace Proyecto_fina
                 ticket.TextoIzquierda("");
                 ticket.TextoCentro("Ticket de venta");
                 ticket.TextoIzquierda("No. de ticket: " + getUltimoTicketID());
-                ticket.TextoIzquierda("Fecha: " + DateTime.Now.ToString());
+                ticket.TextoIzquierda("Fecha: " + fecha_operaciones_caja);
                 ticket.TextoIzquierda("Caja: " + caja_activa);
                 ticket.TextoIzquierda("Le atendió: " + Utilidades.getNombreUsuario(id_usuario_rol_pagina));
                 ticket.TextoIzquierda("");

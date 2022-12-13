@@ -71,10 +71,12 @@ namespace Proyecto_fina
         {
             AbrirFormularioHijo(new FormConsultarRecibos(this.getUsuarioID()));
         }
-
         private void btn_reporte_cajeros_Click(object sender, EventArgs e)
         {
-            AbrirFormularioHijo(new FormReporteCajero(this.getUsuarioID()));
+        }
+        private void btn_pagina_inicio_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new FormPaginaPrincipal());
         }
         private void btn_cerrar_sesion_Click(object sender, EventArgs e)
         {
@@ -174,6 +176,13 @@ namespace Proyecto_fina
             lbl_fecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
             lbl_hora.Text = DateTime.Now.ToString("HH:mm:ss");
         }
+
+        private void btn_reporte_cajeros_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new FormReporteCajero(this.getUsuarioID()));
+
+        }
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]

@@ -30,8 +30,8 @@ namespace Proyecto_fina
             cb_departamento_producto.DisplayMember = "Departamento";
             cb_departamento_producto.ValueMember = "ID";
             cb_descuento_producto.DataSource = descuento.cargarDescuentos();
-            cb_descuento_producto.DisplayMember = "Concepto";
-            cb_descuento_producto.ValueMember = "Concepto";
+            cb_descuento_producto.DisplayMember = "Porcentaje";
+            cb_descuento_producto.ValueMember = "ID";
         }
         private void cb_departamento_producto_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -74,7 +74,7 @@ namespace Proyecto_fina
                 {
                     p.Nombre_producto = txt_nombre_producto.Text.Trim().ToUpper();
                     SqlDataReader rd = Utilidades.convertirID("id_departamento", "tb_departamentos", "nombre_departamento", cb_departamento_producto.Text);
-                    SqlDataReader rd2 = Utilidades.convertirID("id_descuento", "tb_descuentos", "nombre_descuento", cb_descuento_producto.Text);
+                    SqlDataReader rd2 = Utilidades.convertirID("id_descuento", "tb_descuentos", "cantidad_descuento", cb_descuento_producto.Text);
                     if (rd.HasRows && rd2.HasRows)
                     {
                         rd.Read();

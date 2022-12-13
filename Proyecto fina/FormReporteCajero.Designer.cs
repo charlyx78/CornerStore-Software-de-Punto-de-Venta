@@ -29,10 +29,15 @@ namespace Proyecto_fina
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.txt_suma_cantidades = new System.Windows.Forms.NumericUpDown();
+            this.txt_suma_ventas = new System.Windows.Forms.NumericUpDown();
+            this.txt_suma_utilidad = new System.Windows.Forms.NumericUpDown();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
@@ -46,9 +51,6 @@ namespace Proyecto_fina
             this.label5 = new System.Windows.Forms.Label();
             this.lbl_tabla_vacia = new System.Windows.Forms.Label();
             this.dg_reporte_cajeros = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.img_tabla_vacia = new System.Windows.Forms.PictureBox();
             this.fecha_venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre_departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,18 +58,16 @@ namespace Proyecto_fina
             this.unidades_vendidas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.suma_venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.suma_utilidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txt_suma_ventas = new System.Windows.Forms.NumericUpDown();
-            this.txt_suma_utilidad = new System.Windows.Forms.NumericUpDown();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.img_tabla_vacia = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_suma_cantidades)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_suma_ventas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_suma_utilidad)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_reporte_cajeros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_tabla_vacia)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_suma_ventas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_suma_utilidad)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -86,6 +86,39 @@ namespace Proyecto_fina
             this.panel2.Size = new System.Drawing.Size(840, 41);
             this.panel2.TabIndex = 125;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label9.Location = new System.Drawing.Point(571, 11);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(136, 16);
+            this.label9.TabIndex = 128;
+            this.label9.Text = "Suma total de utilidad";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label7.Location = new System.Drawing.Point(2, 11);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(180, 16);
+            this.label7.TabIndex = 111;
+            this.label7.Text = "Suma de unidades vendidas";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label8.Location = new System.Drawing.Point(310, 11);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(133, 16);
+            this.label8.TabIndex = 127;
+            this.label8.Text = "Suma total de ventas";
+            // 
             // txt_suma_cantidades
             // 
             this.txt_suma_cantidades.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -103,6 +136,42 @@ namespace Proyecto_fina
             this.txt_suma_cantidades.Size = new System.Drawing.Size(116, 22);
             this.txt_suma_cantidades.TabIndex = 120;
             this.txt_suma_cantidades.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txt_suma_ventas
+            // 
+            this.txt_suma_ventas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_suma_ventas.DecimalPlaces = 2;
+            this.txt_suma_ventas.Enabled = false;
+            this.txt_suma_ventas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_suma_ventas.Location = new System.Drawing.Point(449, 9);
+            this.txt_suma_ventas.Maximum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            0});
+            this.txt_suma_ventas.Name = "txt_suma_ventas";
+            this.txt_suma_ventas.ReadOnly = true;
+            this.txt_suma_ventas.Size = new System.Drawing.Size(116, 22);
+            this.txt_suma_ventas.TabIndex = 121;
+            this.txt_suma_ventas.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txt_suma_utilidad
+            // 
+            this.txt_suma_utilidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_suma_utilidad.DecimalPlaces = 2;
+            this.txt_suma_utilidad.Enabled = false;
+            this.txt_suma_utilidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_suma_utilidad.Location = new System.Drawing.Point(713, 9);
+            this.txt_suma_utilidad.Maximum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            0});
+            this.txt_suma_utilidad.Name = "txt_suma_utilidad";
+            this.txt_suma_utilidad.ReadOnly = true;
+            this.txt_suma_utilidad.Size = new System.Drawing.Size(120, 22);
+            this.txt_suma_utilidad.TabIndex = 122;
+            this.txt_suma_utilidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // panel1
             // 
@@ -217,6 +286,7 @@ namespace Proyecto_fina
             this.btn_filtros.Text = "Buscar";
             this.btn_filtros.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_filtros.UseVisualStyleBackColor = false;
+            this.btn_filtros.Click += new System.EventHandler(this.btn_filtros_Click);
             // 
             // label5
             // 
@@ -255,15 +325,15 @@ namespace Proyecto_fina
             this.dg_reporte_cajeros.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
             this.dg_reporte_cajeros.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dg_reporte_cajeros.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.NullValue = null;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_reporte_cajeros.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.NullValue = null;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_reporte_cajeros.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dg_reporte_cajeros.ColumnHeadersHeight = 40;
             this.dg_reporte_cajeros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dg_reporte_cajeros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -283,53 +353,16 @@ namespace Proyecto_fina
             this.dg_reporte_cajeros.RowHeadersVisible = false;
             this.dg_reporte_cajeros.RowHeadersWidth = 80;
             this.dg_reporte_cajeros.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.NullValue = null;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(208)))), ((int)(((byte)(193)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            this.dg_reporte_cajeros.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.NullValue = null;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(208)))), ((int)(((byte)(193)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            this.dg_reporte_cajeros.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dg_reporte_cajeros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dg_reporte_cajeros.Size = new System.Drawing.Size(991, 457);
             this.dg_reporte_cajeros.TabIndex = 120;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(12, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 20);
-            this.label1.TabIndex = 119;
-            this.label1.Text = "Reporte de cajeros";
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Image = global::Proyecto_fina.Properties.Resources.cerrar;
-            this.button1.Location = new System.Drawing.Point(1016, 62);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(36, 36);
-            this.button1.TabIndex = 126;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // img_tabla_vacia
-            // 
-            this.img_tabla_vacia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
-            this.img_tabla_vacia.Image = global::Proyecto_fina.Properties.Resources.nada_encontrado;
-            this.img_tabla_vacia.Location = new System.Drawing.Point(460, 267);
-            this.img_tabla_vacia.Name = "img_tabla_vacia";
-            this.img_tabla_vacia.Size = new System.Drawing.Size(94, 97);
-            this.img_tabla_vacia.TabIndex = 122;
-            this.img_tabla_vacia.TabStop = false;
-            this.img_tabla_vacia.Visible = false;
             // 
             // fecha_venta
             // 
@@ -373,74 +406,42 @@ namespace Proyecto_fina
             this.suma_utilidad.Name = "suma_utilidad";
             this.suma_utilidad.ReadOnly = true;
             // 
-            // txt_suma_ventas
+            // label1
             // 
-            this.txt_suma_ventas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_suma_ventas.DecimalPlaces = 2;
-            this.txt_suma_ventas.Enabled = false;
-            this.txt_suma_ventas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_suma_ventas.Location = new System.Drawing.Point(449, 9);
-            this.txt_suma_ventas.Maximum = new decimal(new int[] {
-            1410065408,
-            2,
-            0,
-            0});
-            this.txt_suma_ventas.Name = "txt_suma_ventas";
-            this.txt_suma_ventas.ReadOnly = true;
-            this.txt_suma_ventas.Size = new System.Drawing.Size(116, 22);
-            this.txt_suma_ventas.TabIndex = 121;
-            this.txt_suma_ventas.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(12, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(162, 20);
+            this.label1.TabIndex = 119;
+            this.label1.Text = "Reporte de cajeros";
             // 
-            // txt_suma_utilidad
+            // button1
             // 
-            this.txt_suma_utilidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_suma_utilidad.DecimalPlaces = 2;
-            this.txt_suma_utilidad.Enabled = false;
-            this.txt_suma_utilidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_suma_utilidad.Location = new System.Drawing.Point(713, 9);
-            this.txt_suma_utilidad.Maximum = new decimal(new int[] {
-            1410065408,
-            2,
-            0,
-            0});
-            this.txt_suma_utilidad.Name = "txt_suma_utilidad";
-            this.txt_suma_utilidad.ReadOnly = true;
-            this.txt_suma_utilidad.Size = new System.Drawing.Size(120, 22);
-            this.txt_suma_utilidad.TabIndex = 122;
-            this.txt_suma_utilidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Transparent;
+            this.button1.Image = global::Proyecto_fina.Properties.Resources.cerrar;
+            this.button1.Location = new System.Drawing.Point(1016, 62);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(36, 36);
+            this.button1.TabIndex = 126;
+            this.button1.UseVisualStyleBackColor = false;
             // 
-            // label7
+            // img_tabla_vacia
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(2, 11);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(180, 16);
-            this.label7.TabIndex = 111;
-            this.label7.Text = "Suma de unidades vendidas";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label8.Location = new System.Drawing.Point(310, 11);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(133, 16);
-            this.label8.TabIndex = 127;
-            this.label8.Text = "Suma total de ventas";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label9.Location = new System.Drawing.Point(571, 11);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(136, 16);
-            this.label9.TabIndex = 128;
-            this.label9.Text = "Suma total de utilidad";
+            this.img_tabla_vacia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
+            this.img_tabla_vacia.Image = global::Proyecto_fina.Properties.Resources.nada_encontrado;
+            this.img_tabla_vacia.Location = new System.Drawing.Point(460, 267);
+            this.img_tabla_vacia.Name = "img_tabla_vacia";
+            this.img_tabla_vacia.Size = new System.Drawing.Size(94, 97);
+            this.img_tabla_vacia.TabIndex = 122;
+            this.img_tabla_vacia.TabStop = false;
+            this.img_tabla_vacia.Visible = false;
             // 
             // FormReporteCajero
             // 
@@ -463,12 +464,12 @@ namespace Proyecto_fina
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_suma_cantidades)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_suma_ventas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_suma_utilidad)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_reporte_cajeros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_tabla_vacia)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_suma_ventas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_suma_utilidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
